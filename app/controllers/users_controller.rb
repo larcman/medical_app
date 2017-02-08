@@ -5,6 +5,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    center = Center.where(id: '0').first;
+    @user.center_id = center.id
+
     if @user.save
       session[:user_id] = @user.id
       redirect_to '/'

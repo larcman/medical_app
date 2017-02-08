@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208053130) do
+ActiveRecord::Schema.define(version: 20170208073022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,9 @@ ActiveRecord::Schema.define(version: 20170208053130) do
     t.boolean  "isadmin",         default: false, null: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.string   "center_id",                       null: false
     t.index ["username"], name: "users_unique_username", unique: true, using: :btree
   end
 
+  add_foreign_key "users", "centers", name: "users_center_fk"
 end
