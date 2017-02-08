@@ -15,15 +15,16 @@ ActiveRecord::Schema.define(version: 20170206234156) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "email"
-    t.string   "username"
-    t.string   "password_digest"
-    t.boolean  "isadmin"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+  create_table "users", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
+    t.string   "firstname",                       null: false
+    t.string   "lastname",                        null: false
+    t.string   "email",                           null: false
+    t.string   "username",                        null: false
+    t.string   "password_digest",                 null: false
+    t.boolean  "isadmin",         default: false, null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.index ["username"], name: "users_unique_username", unique: true, using: :btree
   end
 
 end
