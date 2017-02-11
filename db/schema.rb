@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208073022) do
+ActiveRecord::Schema.define(version: 20170211030518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,44 @@ ActiveRecord::Schema.define(version: 20170208073022) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["code"], name: "centers_unique_code", unique: true, using: :btree
+  end
+
+  create_table "people", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
+    t.string   "code",            null: false
+    t.date     "elaborationdate", null: false
+    t.string   "firstname",       null: false
+    t.string   "lastname",        null: false
+    t.date     "birthdate"
+    t.integer  "age"
+    t.string   "gender"
+    t.string   "maritalstatus"
+    t.string   "occupation"
+    t.string   "education"
+    t.string   "birthplace"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "region"
+    t.string   "zipcode"
+    t.string   "city"
+    t.string   "state"
+    t.string   "phone"
+    t.string   "cellphone"
+    t.string   "email"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "center_id",       null: false
+    t.index ["code"], name: "people_unique_code", unique: true, using: :btree
+  end
+
+  create_table "researches", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
+    t.string   "code",        null: false
+    t.string   "name",        null: false
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "user_id",     null: false
+    t.string   "center_id",   null: false
+    t.index ["code"], name: "researches_unique_code", unique: true, using: :btree
   end
 
   create_table "users", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
@@ -36,5 +74,8 @@ ActiveRecord::Schema.define(version: 20170208073022) do
     t.index ["username"], name: "users_unique_username", unique: true, using: :btree
   end
 
+  add_foreign_key "people", "centers", name: "people_center_fk"
+  add_foreign_key "researches", "centers", name: "researches_center_fk"
+  add_foreign_key "researches", "users", name: "researches_user_fk"
   add_foreign_key "users", "centers", name: "users_center_fk"
 end
