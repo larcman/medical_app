@@ -10,21 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211043315) do
+ActiveRecord::Schema.define(version: 20170211050823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appointments", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
-    t.date     "day",         null: false
-    t.time     "starttime",   null: false
-    t.string   "status",      null: false
+    t.date     "day",        null: false
+    t.time     "starttime",  null: false
+    t.string   "status",     null: false
     t.text     "comments"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "research_id", null: false
-    t.string   "patient_id",  null: false
-    t.string   "center_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "centers", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
@@ -128,9 +125,6 @@ ActiveRecord::Schema.define(version: 20170211043315) do
     t.index ["username"], name: "users_unique_username", unique: true, using: :btree
   end
 
-  add_foreign_key "appointments", "centers", name: "appointments_center_fk"
-  add_foreign_key "appointments", "patients", name: "appointments_patient_fk"
-  add_foreign_key "appointments", "researches", name: "appointments_research_fk"
   add_foreign_key "evaluations", "appointments", name: "evaluations_appointment_fk"
   add_foreign_key "evaluations", "centers", name: "evaluations_center_fk"
   add_foreign_key "patients", "centers", name: "patients_center_fk"
