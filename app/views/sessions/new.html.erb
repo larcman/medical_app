@@ -1,30 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>MEDICUCS</title>
-  </head>
+<div class="container signin-container">
 
-  <body>
-
-    <div class="container signin-container">
-  	  <%= form_for(:session, url: login_path, class: "form-signin") do |f| %>
-  	    <h2 class="form-signin-heading">Please sign in</h2> 
-	    <%= f.email_field :email, :placeholder => "Email", :class => 'form-control' %> 
-	    <%= f.password_field :password, :placeholder => "Password", :class => 'form-control' %>
-	    <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <%= f.submit "Log in", :class => "btn btn-lg btn-primary btn-block" %>
-	  <% end %>
+  <%= form_for(:session, url: login_path, class: "form-signin") do |f| %>
+    <h2 class="form-signin-heading">Please sign in</h2> 
+    <%= f.email_field :email, :placeholder => "Email", :class => 'form-control' %> 
+    <%= f.password_field :password, :placeholder => "Password", :class => 'form-control' %>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
     </div>
-    
-  </body>
-  
-</html>
+    <%= f.submit "Log in", :class => "btn btn-lg btn-primary btn-block" %>
+  <% end %>
+
+</div>
