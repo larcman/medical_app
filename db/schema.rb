@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211041826) do
+ActiveRecord::Schema.define(version: 20170211043315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,38 @@ ActiveRecord::Schema.define(version: 20170211041826) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["code"], name: "centers_unique_code", unique: true, using: :btree
+  end
+
+  create_table "evaluations", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
+    t.string   "var_fr"
+    t.string   "var_acpa"
+    t.string   "var_tnfa"
+    t.string   "var_il6"
+    t.string   "var_pcr"
+    t.string   "var_das28"
+    t.string   "var_vsg"
+    t.string   "var_haq"
+    t.string   "var_vop"
+    t.string   "var_iac"
+    t.string   "var_ic"
+    t.string   "var_ta"
+    t.string   "var_fc"
+    t.string   "var_temp"
+    t.string   "var_lip"
+    t.string   "var_ct"
+    t.string   "var_tg"
+    t.string   "var_ldl"
+    t.string   "var_vldl"
+    t.string   "var_hdl"
+    t.string   "var_glu"
+    t.string   "var_peso"
+    t.string   "var_talla"
+    t.string   "var_imc"
+    t.string   "var_cc"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "appointment_id", null: false
+    t.string   "center_id",      null: false
   end
 
   create_table "patients", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
@@ -99,6 +131,8 @@ ActiveRecord::Schema.define(version: 20170211041826) do
   add_foreign_key "appointments", "centers", name: "appointments_center_fk"
   add_foreign_key "appointments", "patients", name: "appointments_patient_fk"
   add_foreign_key "appointments", "researches", name: "appointments_research_fk"
+  add_foreign_key "evaluations", "appointments", name: "evaluations_appointment_fk"
+  add_foreign_key "evaluations", "centers", name: "evaluations_center_fk"
   add_foreign_key "patients", "centers", name: "patients_center_fk"
   add_foreign_key "patients", "people", name: "patients_people_fk"
   add_foreign_key "patients", "researches", name: "patients_researches_fk"
