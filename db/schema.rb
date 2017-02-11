@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211030518) do
+ActiveRecord::Schema.define(version: 20170211033531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20170211030518) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["code"], name: "centers_unique_code", unique: true, using: :btree
+  end
+
+  create_table "patients", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
+    t.string   "code",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "research_id", null: false
+    t.string   "person_id",   null: false
+    t.string   "center_id",   null: false
+    t.index ["code"], name: "patients_unique_code", unique: true, using: :btree
   end
 
   create_table "people", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
@@ -74,6 +84,9 @@ ActiveRecord::Schema.define(version: 20170211030518) do
     t.index ["username"], name: "users_unique_username", unique: true, using: :btree
   end
 
+  add_foreign_key "patients", "centers", name: "patients_center_fk"
+  add_foreign_key "patients", "people", name: "patients_people_fk"
+  add_foreign_key "patients", "researches", name: "patients_researches_fk"
   add_foreign_key "people", "centers", name: "people_center_fk"
   add_foreign_key "researches", "centers", name: "researches_center_fk"
   add_foreign_key "researches", "users", name: "researches_user_fk"
