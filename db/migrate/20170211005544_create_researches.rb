@@ -5,6 +5,8 @@ class CreateResearches < ActiveRecord::Migration[5.0]
       t.string :code, null: false
       t.string :name, null: false
       t.text :description
+      t.reference :user_id, :string, null: false
+      t.reference :center_id, :string, null: false
       t.timestamps
     end
     
@@ -15,6 +17,12 @@ class CreateResearches < ActiveRecord::Migration[5.0]
         SQL
         execute <<-SQL
           ALTER TABLE researches ADD CONSTRAINT researches_unique_code UNIQUE(code);
+        SQL
+        execute <<-SQL
+          ALTER TABLE "researches" ADD CONSTRAINT "researches_user_fk" FOREIGN KEY ("user_id") REFERENCES "users" ("id");
+        SQL
+        execute <<-SQL
+          ALTER TABLE "researches" ADD CONSTRAINT "researches_center_fk" FOREIGN KEY ("center_id") REFERENCES "centers" ("id");
         SQL
       end
       dir.down do
