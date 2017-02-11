@@ -5,8 +5,8 @@ class CreateResearches < ActiveRecord::Migration[5.0]
       t.string :code, null: false
       t.string :name, null: false
       t.text :description
-      t.reference :user_id, :string, null: false
-      t.reference :center_id, :string, null: false
+      t.references :user_id, :string, null: false
+      t.references :center_id, :string, null: false
       t.timestamps
     end
     
