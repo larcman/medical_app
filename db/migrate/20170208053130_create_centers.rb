@@ -15,10 +15,6 @@ class CreateCenters < ActiveRecord::Migration[5.0]
         execute <<-SQL
           ALTER TABLE centers ADD CONSTRAINT centers_unique_code UNIQUE(code);
         SQL
-        
-        Center.create  id: '0',
-                       code: 'CUCS',
-                       name: 'Centro Universitario de Ciencias de la Salud UDG'
       end
       dir.down do
         execute <<-SQL

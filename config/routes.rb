@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'centers' => 'centers#index'
   get 'centers/:id' => 'centers#show', as: :center
 
-  get '/login'  => 'sessions#new'
+  get 'login'  => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   
