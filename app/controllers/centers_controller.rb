@@ -1,5 +1,5 @@
 class CentersController < ApplicationController
-before_action :require_user
+  before_action :require_user
 
   def index
     # FIXME: for now we have only one Medical Center

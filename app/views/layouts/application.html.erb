@@ -40,7 +40,7 @@
 	          <% else %>
 	            <li><a href="#">Investigaciones</a></li>
 	            <% if current_user && current_user.isadmin %>
-	              <li><a href="#">Usuarios</a></li>
+	              <li><%= link_to "Usuarios", users_path, method: "get" %></li>
 	            <% end %>
 	          <% end %>
 	          
