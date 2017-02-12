@@ -20,8 +20,7 @@ class UsersController < ApplicationController
   
   def index
     # returns all users except Admin
-    # @users = User.where.not(id: '0').order(username: :desc)
-    @users = User.all.order(username: :desc)
+    @users = User.where.not(id: '0').order(username: :asc)
   end
 
   private

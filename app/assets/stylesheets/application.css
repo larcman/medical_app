@@ -72,3 +72,35 @@ body {
   background-color: #ddd;
 }
 
+
+
+
+/* GRIDS */
+.row > div {
+  margin-bottom: 4px;
+}
+.header {
+  min-height: 30px;
+}
+.footer {
+  min-height: 20px;
+}
+.header, .footer {
+  background-color: #337ab7;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.content-even {
+  min-height: 10px;
+  background: #ddd;
+}
+.content-odd {
+  min-height: 10px;
+  background: #fff;
+}
+
+.row-center {
+  text-align: center;
+}

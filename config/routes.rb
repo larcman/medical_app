@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   
   get 'users' => 'users#index'
+  get 'users/index'
+  get 'users/show'
+  get 'users/destroy'  
   get 'signup'  => 'users#new'
   resources :users
 
