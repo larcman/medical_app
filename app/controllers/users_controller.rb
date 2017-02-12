@@ -11,8 +11,7 @@ class UsersController < ApplicationController
     @user.center_id = center.id
 
     if @user.save
-      session[:user_id] = @user.id
-      redirect_to '/'
+      redirect_to action: 'index'
     else
       redirect_to '/signup'
     end
