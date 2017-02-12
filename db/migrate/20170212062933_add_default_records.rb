@@ -1,4 +1,9 @@
 class AddDefaultRecords < ActiveRecord::Migration[5.0]
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+
   def change
     reversible do |dir|
       dir.up do

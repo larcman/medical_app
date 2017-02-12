@@ -8,7 +8,6 @@ before_action :require_user
 
   def show
     @center = Center.find(params[:id])
-    @research = @center.researches.first # DELETE ME
     @researches = @center.researches
   end
 
