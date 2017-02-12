@@ -74,13 +74,13 @@ body {
 
 
 
-
 /* GRIDS */
 .row > div {
-  margin-bottom: 4px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 .header {
-  min-height: 30px;
+  min-height: 20px;
 }
 .footer {
   min-height: 20px;
@@ -93,14 +93,33 @@ body {
   text-align: center;
 }
 .content-even {
-  min-height: 10px;
+  min-height: 15px;
   background: #ddd;
 }
 .content-odd {
-  min-height: 10px;
+  min-height: 15px;
   background: #fff;
 }
-
 .row-center {
   text-align: center;
+}
+
+
+
+/* SPACERS */
+.spacer-5 {
+  width: 100%;
+  min-height: 1px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  position: relative;
+}
+.spacer-10 {
+  width: 100%;
+  min-height: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  position: relative;
 }
