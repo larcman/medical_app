@@ -22,6 +22,17 @@ class UsersController < ApplicationController
     # returns all users except Admin
     @users = User.where.not(id: '0').order(username: :asc)
   end
+  
+  def show
+    
+  end
+  
+  def destroy
+    puts params
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to action: 'index'
+  end
 
   private
   def user_params
