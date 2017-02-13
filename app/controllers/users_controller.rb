@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params(true))
     center = Center.where(id: '0').first;
     @user.center_id = center.id
 
@@ -23,18 +23,42 @@ class UsersController < ApplicationController
   end
   
   def show
-    
+    @user = User.find(params[:id])
+    redirect_to action: 'edit'
   end
   
+  def edit
+    @user = User.find(params[:id])
+    password = BCrypt::Password.new(@user.password_digest)
+    puts password 
+  end
+
+  def update
+    @user = User.find(params[:id])
+    curr_user = User.find(session[:user_id])
+    if @user.update(user_params(false))
+      if curr_user.isadmin
+        redirect_to action: 'index'
+      else
+        redirect_to action: 'edit'
+      end
+    else
+      redirect_to action: 'edit'
+    end
+  end
+
   def destroy
-    puts params
     @user = User.find(params[:id])
     @user.destroy
     redirect_to action: 'index'
   end
 
   private
-  def user_params
-    params.require(:user).permit(:firstname, :lastname, :email, :username, :password)
+  def user_params (create)
+    if (create)
+      params.require(:user).permit(:firstname, :lastname, :email, :username, :password)
+    else
+      params.require(:user).permit(:firstname, :lastname, :email, :username, :password, :isadmin)
+    end  
    end
 end

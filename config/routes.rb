@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   
   get 'users' => 'users#index'
   get 'users/index'
-  get 'users/show'
+  put 'users/:id' => 'users#show'
+  post 'users/update'
   delete 'users/:id' => 'users#destroy'
   get 'signup'  => 'users#new'
   resources :users
