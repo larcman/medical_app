@@ -16,12 +16,26 @@
  */
 
 
+/* General Theme */
 body {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 30px;
   background-color: #eee;
 }
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+.theme-showcase .navbar .container {
+  width: auto;
+}
 
+
+/* Log In */
 .signin-container {
     padding-top: 50px;
     padding-right: 20%;
@@ -73,17 +87,16 @@ body {
 }
 
 
-
-/* GRIDS */
+/* Grid */
 .row > div {
-  margin-top: 1px;
-  margin-bottom: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .header {
   min-height: 20px;
 }
 .footer {
-  min-height: 20px;
+  height: 5px;
 }
 .header, .footer {
   background-color: #337ab7;
@@ -105,8 +118,7 @@ body {
 }
 
 
-
-/* SPACERS */
+/* Spacer */
 .spacer-5 {
   width: 100%;
   min-height: 1px;
