@@ -15,13 +15,13 @@ class UsersController < ApplicationController
       redirect_to action: 'index'
     rescue ActiveRecord::RecordNotUnique
       flash[:error] = "Error! El nombre de usuario elegido, ya esta en uso."
-      redirect_to 'new'
+      redirect_to action: 'new'
     rescue ActiveRecord::RecordInvalid
       flash[:error] = "Error! Asegurese de llenar todos los campos."
-      redirect_to 'new'
+      redirect_to action: 'new'
     rescue
       flash[:error] = "Error! Asegurese de llenar todos los campos correctamente."
-      redirect_to 'new'
+      redirect_to action: 'new'
     end
   end
   
