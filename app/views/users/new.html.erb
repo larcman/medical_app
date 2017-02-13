@@ -1,18 +1,39 @@
-<div class="login">
-  <div class="container">
-    <div class="form">
+<div class="container">
+  <h1> Nuevo Usuario </h1>
+</div>
 
-      <h1>Sign up</h1>
+<div class="spacer-5"></div>
 
-      <%= form_for(@user) do |f| %>
-        <%= f.text_field :firstname, :placeholder => "First name" %>
-        <%= f.text_field :lastname, :placeholder => "Last name" %>
-        <%= f.email_field :email, :placeholder => "Email" %>
-        <%= f.text_field :username, :placeholder => "Username" %>
-        <%= f.password_field :password, :placeholder => "Password" %>
-        <%= f.submit "Guardar", class: "btn-submit" %>
+<div class="container">
+  <div class="form-horizontal">
+    <%= form_for(@user) do |f| %>
+
+      <b>Usuario</b>
+      <%= f.text_field :username, class: 'form-control' %>
+      
+      <b>Nombre(s)</b>
+      <%= f.text_field :firstname, class: 'form-control' %>
+      
+      <b>Apellidos</b>
+      <%= f.text_field :lastname, class: 'form-control' %>      
+
+      <b>Correo</b>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <b>Contraseña</b>
+      <%= f.password_field :password, class: 'form-control' %>
+      
+      <% if current_user.isadmin %>
+        <b>Administrador</b>
+        <%= f.check_box :isadmin, class: 'checkbox' %>
       <% end %>
 
-    </div>
+	  <div class="spacer-5"></div>
+
+      <%= f.submit "Guardar", class: "btn btn-primary" %>
+      <% if current_user.isadmin %>      
+        <%= link_to "Atras", users_path, method: "get", class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
   </div>
 </div>

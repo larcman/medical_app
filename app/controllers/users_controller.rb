@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user
+  before_action :is_admin, only: [:index, :new, :create]
   
   def new
     @user = User.new
@@ -9,11 +10,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params(true))
     center = Center.where(id: '0').first;
     @user.center_id = center.id
-
     if @user.save
       redirect_to action: 'index'
     else
-      redirect_to '/signup'
+      # TODO: handle errors
+      redirect_to 'new'
     end
   end
   
@@ -23,26 +24,21 @@ class UsersController < ApplicationController
   end
   
   def show
+    # redirect to edit
     @user = User.find(params[:id])
     redirect_to action: 'edit'
   end
   
   def edit
     @user = User.find(params[:id])
-    password = BCrypt::Password.new(@user.password_digest)
-    puts password 
   end
 
   def update
     @user = User.find(params[:id])
-    curr_user = User.find(session[:user_id])
     if @user.update(user_params(false))
-      if curr_user.isadmin
-        redirect_to action: 'index'
-      else
-        redirect_to action: 'edit'
-      end
+      redirect_to action: 'edit'
     else
+      # TODO: handle errors
       redirect_to action: 'edit'
     end
   end

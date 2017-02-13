@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   put 'users/:id' => 'users#show'
   post 'users/update'
   delete 'users/:id' => 'users#destroy'
-  get 'signup'  => 'users#new'
+  get 'users/new'
   resources :users
 
 end
