@@ -2,7 +2,10 @@ class ResearchesController < ApplicationController
   before_action :require_user
   
   def index
-    @researches = Research.all.order(created_at: :asc)    
+    # TODO: Develop multi researches support
+    # Develop view and disable option in menu
+    # @researches = Research.all.order(created_at: :asc)
+    redirect_to action: 'show', id: 0
   end
 
   def show
