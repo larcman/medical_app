@@ -31,7 +31,7 @@
 	          <% if @research %>
 	            <li><a href="#">Pacientes</a></li>
 	          <% else %>
-	            <li><a href="#">Investigaciones</a></li>
+	            <li><a href="#">Protocolos</a></li>
 	            <% if current_user && current_user.isadmin %>
 	              <li><%= link_to "Usuarios", users_path, method: "get" %></li>
 	            <% end %>
