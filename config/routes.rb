@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   put 'users/:id' => 'users#show'
   delete 'users/:id' => 'users#destroy'
   resources :users
-
+  
   get 'researches' => 'researches#index', as: 'all_researches'
   get 'researches/index'
   get 'researches/:id' => 'researches#show', as: 'research'
@@ -25,5 +25,8 @@ Rails.application.routes.draw do
   put 'researches/:id/edit' => 'researches#edit', as: 'edit_research'
   post 'researches/update'
   resources :researches
-
+  
+  get 'patients/new' => 'patients#new', as: 'new_patient'
+  resources :patients
+  
 end

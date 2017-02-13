@@ -1,2 +1,57 @@
-<h1>Researches#show</h1>
-<p>Find me in app/views/researches/show.html.erb</p>
+<h1> Detalles del protocolo </h1>
+
+<div class="spacer-5"></div>
+
+<h3> Pacientes </h3>
+
+<div class="row header">
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Codigo 1 </div>
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Codigo 2 </div>  
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Nombre(s) </div>
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Apellidos </div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"> Telefono </div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"> Celular</div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
+</div>
+
+<% @patients.each_with_index do |patient, idx| %>
+  <% if (idx % 2 == 0) %>
+    <div class="row content-even">
+	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= patient.code %></div>
+	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= patient.person.code %></div>
+	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2 "><%= patient.person.firstname %></div>
+	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= patient.person.lastname %></div>
+	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= patient.person.phone %></div>
+	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= patient.person.cellphone %></div>	  
+	  <!--<div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Editar", patient, method: :put %></div>-->
+	  <!--<div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", patient, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar este paciente?" } %></div>-->
+	</div>
+  <% else %>
+    <div class="row content-odd">
+	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= patient.code %></div>
+	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= patient.person.code %></div>
+	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2 "><%= patient.person.firstname %></div>
+	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= patient.person.lastname %></div>
+	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= patient.person.phone %></div>
+	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= patient.person.cellphone %></div>	  
+	  <!--<div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Editar", patient, method: :put %></div>-->
+	  <!--<div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", patient, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar este paciente?" } %></div>-->
+	</div>
+  <% end %>
+<% end %>
+
+<div class="row footer">
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"></div>
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"></div>
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"></div>
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"></div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>  
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
+</div>
+ 
+<div class="spacer-5"></div>
+
+<%= link_to "Agregar Paciente", new_patient_path, { class: "btn btn-primary"} %>
