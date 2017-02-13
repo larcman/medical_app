@@ -19,10 +19,9 @@
   	  <header class="navbar navbar-fixed-top navbar-inverse">
 	    <div class="container">
 	      <% if @research %>
-	        <p class="navbar-brand"><%= @research.code %></p>	     
+	        <%= link_to "#{@research.code}", edit_research_path(@research.id), { method: "put", class: "navbar-brand" } %>     
 	      <% end %>
-	      <a class="navbar-brand"> ENALAPRIL </a> <!-- DELETE ME -->
-	      
+
 	      <nav>
 	        <ul class="nav navbar-nav navbar-right">
 	          <li><%= link_to "Inicio", root_path %></li>
@@ -30,8 +29,9 @@
 	          
 	          <% if @research %>
 	            <li><a href="#">Pacientes</a></li>
+				<li><a href="#">Visitas</a></li>	            
 	          <% else %>
-	            <li><a href="#">Protocolos</a></li>
+	            <li><%= link_to "Protocolos", all_researches_path %></li>
 	            <% if current_user && current_user.isadmin %>
 	              <li><%= link_to "Usuarios", users_path, method: "get" %></li>
 	            <% end %>
@@ -50,7 +50,7 @@
 	              </ul>
 	            </li>
 	          <% else %>
-	            <li><%= link_to "Entrar", login_path %> Log In</li>
+	            <li><%= link_to "Entrar", login_path %></li>
 	          <% end %>
 	        </ul>
 	      </nav>

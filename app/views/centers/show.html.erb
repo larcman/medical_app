@@ -6,7 +6,7 @@
 	  <h1><%= research.code %></h1>
 	  <h2><%= research.name %></h2>
 	  <p><%= research.description %></p>
-	  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button"> Abrir Protocolo </a>
+	  <%= link_to "Abrir Protocolo", research_path(research.id), { class: "btn btn-lg btn-primary"} %>
 	</div>
   </div>
 <% end %>
