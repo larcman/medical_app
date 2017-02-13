@@ -58,7 +58,10 @@
 	  </header>
   	<% end %>
 
-    <%= yield %>
+  	<div class="container">
+  	  <%= flash_messages %>
+      <%= yield %>
+    </div>
 
   </body>
 </html>

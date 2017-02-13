@@ -14,4 +14,6 @@ class ApplicationController < ActionController::Base
     redirect_to(root_path) unless (current_user && current_user.isadmin)
   end
   
+  
+  
 end

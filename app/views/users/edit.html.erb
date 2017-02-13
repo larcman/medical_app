@@ -1,39 +1,35 @@
-<div class="container">
-  <h1> Editar Usuario </h1>
-</div>
+<h1> Editar Usuario </h1>
 
 <div class="spacer-5"></div>
 
-<div class="container">
-  <div class="form-horizontal">
-    <%= form_for(@user) do |f| %>
+<div class="form-horizontal">
+  <%= form_for(@user) do |f| %>
 
-      <b>Usuario</b>
-      <%= f.text_field :username, class: 'form-control' %>
+    <b>Usuario</b>
+    <%= f.text_field :username, class: 'form-control' %>
+     
+    <b>Nombre(s)</b>
+    <%= f.text_field :firstname, class: 'form-control' %>
       
-      <b>Nombre(s)</b>
-      <%= f.text_field :firstname, class: 'form-control' %>
+    <b>Apellidos</b>
+    <%= f.text_field :lastname, class: 'form-control' %>      
+
+    <b>Correo</b>
+    <%= f.email_field :email, class: 'form-control' %>
+
+    <b>Contraseña</b>
+    <%= f.password_field :password, class: 'form-control', :placeholder => "Si no quieres cambiar contraseña, deja este campo vacio" %>
       
-      <b>Apellidos</b>
-      <%= f.text_field :lastname, class: 'form-control' %>      
-
-      <b>Correo</b>
-      <%= f.email_field :email, class: 'form-control' %>
-
-      <b>Contraseña</b>
-      <%= f.password_field :password, class: 'form-control', :placeholder => "Si no quieres cambiar contraseña, deja este campo vacio" %>
-      
-      <% if current_user.isadmin %>
-        <b>Administrador</b>
-        <%= f.check_box :isadmin, class: 'checkbox' %>
-      <% end %>
-
-	  <div class="spacer-5"></div>
-
-      <%= f.submit "Guardar", class: "btn btn-primary" %>
-      <% if current_user.isadmin %>      
-        <%= link_to "Atras", users_path, method: "get", class: "btn btn-primary" %>
-      <% end %>
+    <% if current_user.isadmin %>
+      <b>Administrador</b>
+      <%= f.check_box :isadmin, class: 'checkbox' %>
     <% end %>
-  </div>
+
+    <div class="spacer-5"></div>
+
+    <%= f.submit "Guardar", class: "btn btn-primary" %>
+    <% if current_user.isadmin %>      
+      <%= link_to "Atras", users_path, method: "get", class: "btn btn-primary" %>
+    <% end %>
+  <% end %>
 </div>

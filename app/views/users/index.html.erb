@@ -1,57 +1,51 @@
-<div class="container">
-  <h1> Usuarios con acceso al sistema </h1>
-</div>
+<h1> Usuarios con acceso al sistema </h1>
 
 <div class="spacer-5"></div>
 
-<div class="container">
-  <div class="row header">
-	<div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Usuario </div>
-	<div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Nombre (s) </div>
-	<div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Apellidos </div>
-	<div class="col-xs-.4 col-sm-3 col-md-3 col-lg-3"> Correo </div>
-	<div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"> Admin</div>
-	<div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
-	<div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
-  </div>
+<div class="row header">
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Usuario </div>
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Nombre (s) </div>
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Apellidos </div>
+  <div class="col-xs-.4 col-sm-3 col-md-3 col-lg-3"> Correo </div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"> Admin</div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
+</div>
 
-  <% @users.each_with_index do |user, idx| %>
-    <% if (idx % 2 == 0) %>
-	  <div class="row content-even">
-	    <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"><%= user.username %></div>
-	    <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"><%= user.firstname %></div>
-	    <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2 "><%= user.lastname %></div>
-	    <div class="col-xs-.3 col-sm-3 col-md-3 col-lg-3"><%= user.email %></div>
-	    <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= user.isadmin %></div>
-	    <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Editar", user, method: :put %></div>
-	    <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", user, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar este usuario?" } %></div>
-	  </div>
-    <% else %>
-	  <div class="row content-odd">
-	    <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"><%= user.username %></div>
-	    <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"><%= user.firstname %></div>
-	    <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2 "><%= user.lastname %></div>
-	    <div class="col-xs-.3 col-sm-3 col-md-3 col-lg-3"><%= user.email %></div>
-	    <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= user.isadmin %></div>
-	    <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Editar", user, method: :put %></div>
-	    <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", user, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar este usuario?" } %></div>
-	  </div>
-	<% end %>
+<% @users.each_with_index do |user, idx| %>
+  <% if (idx % 2 == 0) %>
+    <div class="row content-even">
+	  <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"><%= user.username %></div>
+	  <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"><%= user.firstname %></div>
+	  <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2 "><%= user.lastname %></div>
+	  <div class="col-xs-.3 col-sm-3 col-md-3 col-lg-3"><%= user.email %></div>
+	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= user.isadmin %></div>
+	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Editar", user, method: :put %></div>
+	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", user, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar este usuario?" } %></div>
+	</div>
+  <% else %>
+	<div class="row content-odd">
+	  <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"><%= user.username %></div>
+	  <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"><%= user.firstname %></div>
+	  <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2 "><%= user.lastname %></div>
+	  <div class="col-xs-.3 col-sm-3 col-md-3 col-lg-3"><%= user.email %></div>
+	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= user.isadmin %></div>
+	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Editar", user, method: :put %></div>
+	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", user, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar este usuario?" } %></div>
+	</div>
   <% end %>
+<% end %>
 
-  <div class="row footer">
-	<div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"></div>
-	<div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"></div>
-	<div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"></div>
-	<div class="col-xs-.3 col-sm-3 col-md-3 col-lg-3"></div>
-	<div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
-	<div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
-	<div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
-  </div>
- </div>
+<div class="row footer">
+  <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"></div>
+  <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"></div>
+  <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"></div>
+  <div class="col-xs-.3 col-sm-3 col-md-3 col-lg-3"></div>
+  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
+</div>
  
 <div class="spacer-5"></div>
- 
- <div class="container">
-   <%= link_to "Nuevo Usuario", { :controller => :users, :action => :new }, { class: "btn btn-primary"} %>
-</div>
+
+<%= link_to "Nuevo Usuario", users_new_path, { class: "btn btn-primary"} %>
