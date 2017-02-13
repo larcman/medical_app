@@ -68,5 +68,5 @@ class UsersController < ApplicationController
     else
       params.require(:user).permit(:firstname, :lastname, :email, :username, :password, :isadmin)
     end  
-   end
+  end
 end

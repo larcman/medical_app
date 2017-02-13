@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   root 'centers#index'
+  
+  get 'login'  => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+  
   get 'centers' => 'centers#index'
   get 'centers/index'
   get 'centers/:id' => 'centers#show', as: 'center'
   resources :centers
-
-  get 'login'  => 'sessions#new'
-  post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
   
   get 'users' => 'users#index'
   get 'users/index'
@@ -20,7 +21,9 @@ Rails.application.routes.draw do
   get 'researches' => 'researches#index', as: 'all_researches'
   get 'researches/index'
   get 'researches/:id' => 'researches#show', as: 'research'
-  put 'researches/:id' => 'researches#edit', as: 'edit_research'
+  get 'researches/:id/edit' => 'researches#edit'
+  put 'researches/:id/edit' => 'researches#edit', as: 'edit_research'
+  post 'researches/update'
   resources :researches
 
 end
