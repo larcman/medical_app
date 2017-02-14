@@ -25,13 +25,13 @@
 	      <nav>
 	        <ul class="nav navbar-nav navbar-right">
 	          <li><%= link_to "Inicio", root_path %></li>
-	          <li><%= link_to "Personas", people_path %>
 	          
 	          <% if @research %>
 	            <li><a href="#">Pacientes</a></li>
                 <!--<li><a href="#">Visitas</a></li>-->
 	          <% else %>
-	            <!--<li><%= link_to "Protocolos", all_researches_path %></li>-->
+	            <li><%= link_to "Personas", people_path %>	          
+	            <!--<li><%= link_to "Protocolos", researches_path %></li>-->
 	            <% if current_user && current_user.isadmin %>
 	              <li><%= link_to "Usuarios", users_path, method: "get" %></li>
 	            <% end %>

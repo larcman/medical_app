@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   delete 'users/:id' => 'users#destroy'
   resources :users
   
-  get 'researches' => 'researches#index', as: 'all_researches'
+  get 'researches' => 'researches#index', as: 'researches'
   get 'researches/index'
   get 'researches/:id' => 'researches#show', as: 'research'
   get 'researches/:id/edit' => 'researches#edit'
