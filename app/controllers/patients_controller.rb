@@ -5,6 +5,9 @@ class PatientsController < ApplicationController
     @patient = Patient.new
   end
 
+  def index
+  end
+
   def create
     quick_creation = params[:patient][:quick_creation]
     @research = Research.find(params[:patient][:research_id])
@@ -22,14 +25,17 @@ class PatientsController < ApplicationController
 
     redirect_to controller: 'researches', action: 'show', id: @research.id
   end
-  
-  def index
-  end
 
   def show
   end
 
   def edit
+  end
+  
+  def destroy
+    @patient = Patient.find(params[:id])
+    @patient.destroy
+    redirect_to controller: 'researches', action: 'show', id: @patient.research_id
   end
   
   private
