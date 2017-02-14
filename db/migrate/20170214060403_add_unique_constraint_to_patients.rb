@@ -11,7 +11,7 @@ class AddUniqueConstraintToPatients < ActiveRecord::Migration[5.0]
       end
       dir.down do
         execute <<-SQL
-          ALTER TABLE people DROP CONSTRAINT patients_unique_person_research;
+          ALTER TABLE patients DROP CONSTRAINT patients_unique_person_research;
         SQL
       end
     end
