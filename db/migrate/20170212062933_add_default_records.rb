@@ -9,7 +9,7 @@ class AddDefaultRecords < ActiveRecord::Migration[5.0]
       dir.up do
         Center.create id: '0',
                       code: 'CUCS',
-                      name: 'Centro Universitario de Ciencias de la Salud UDG'
+                      name: 'Centro de Investigacion CUCS'
         
         User.create id: '0',
                     firstname: 'Admin',
@@ -21,9 +21,9 @@ class AddDefaultRecords < ActiveRecord::Migration[5.0]
                     password_digest: User.digest('@dm!n')
                     
         Research.create id: '0',
-                        code: 'MI INVESTIGACION',
-                        name: 'Algun nombre para esta investigacion',
-                        description: 'Alguna descripcion para esta investigacion',
+                        code: 'PROTOCOLO',
+                        name: 'Nombre Protocolo',
+                        description: 'Alguna descripcion para esta protocolo',
                         user_id: '0',
                         center_id: '0'
       end
