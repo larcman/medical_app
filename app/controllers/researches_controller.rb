@@ -10,7 +10,12 @@ class ResearchesController < ApplicationController
 
   def show
     @research = Research.find(params[:id])
+    @center = Center.find(@research.center_id)
     @patients = @research.patients
+    
+    # Stuff for the Quick creation form
+    @patient = Patient.new
+    @people = Person.where("center_id = ?", @center.id);
   end
 
   def edit
@@ -21,17 +26,16 @@ class ResearchesController < ApplicationController
 
   def update
     @research = Research.find(params[:id])
-    @research.center_id = '0'
+    
     begin
       @research.update!(research_params)
       flash[:success] = "Protocolo actualizado satisfactoriamente!"
     rescue ActiveRecord::RecordNotUnique
       flash[:error] = "Error! El codigo elegido para este protocolo ya esta en uso."
-    rescue ActiveRecord::RecordInvalid
-      flash[:error] = "Error! Asegurese de llenar todos los campos."
     rescue
       flash[:error] = "Error! Asegurese de llenar todos los campos correctamente."
     end
+    
     redirect_to action: 'edit'
   end
 

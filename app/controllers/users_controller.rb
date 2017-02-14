@@ -7,17 +7,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params(true))
     usr = User.find(session[:user_id])
+    @user = User.new(user_params(true))
     @user.center_id = usr.center_id
+
     begin
       @user.save!
       redirect_to action: 'index'
     rescue ActiveRecord::RecordNotUnique
       flash[:error] = "Error! El nombre de usuario elegido, ya esta en uso."
-      redirect_to action: 'new'
-    rescue ActiveRecord::RecordInvalid
-      flash[:error] = "Error! Asegurese de llenar todos los campos."
       redirect_to action: 'new'
     rescue
       flash[:error] = "Error! Asegurese de llenar todos los campos correctamente."
@@ -42,16 +40,16 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+
     begin
       @user.update!(user_params(false))
       flash[:success] = "Usuario actualizado satisfactoriamente!"
     rescue ActiveRecord::RecordNotUnique
       flash[:error] = "Error! El nombre de usuario elegido, ya esta en uso."
-    rescue ActiveRecord::RecordInvalid
-      flash[:error] = "Error! Asegurese de llenar todos los campos."
     rescue
       flash[:error] = "Error! Asegurese de llenar todos los campos correctamente."
     end
+
     redirect_to action: 'edit'
   end
 

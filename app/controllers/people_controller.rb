@@ -9,14 +9,12 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
     user = User.find(session[:user_id])
     @person.center_id = user.center_id
+
     begin
       @person.save!
       redirect_to action: 'index'
     rescue ActiveRecord::RecordNotUnique
       flash[:error] = "Error! El codigo elegido, ya esta en uso."
-      redirect_to action: 'new'
-    rescue ActiveRecord::RecordInvalid
-      flash[:error] = "Error! Asegurese de llenar todos los campos."
       redirect_to action: 'new'
     rescue
       flash[:error] = "Error! Asegurese de llenar todos los campos correctamente."
@@ -41,16 +39,16 @@ class PeopleController < ApplicationController
   
   def update
     @person = Person.find(params[:id])
+
     begin
       @person.update!(person_params)
       flash[:success] = "Persona actualizada satisfactoriamente!"
     rescue ActiveRecord::RecordNotUnique
       flash[:error] = "Error! El codigo elegido, ya esta en uso."
-    rescue ActiveRecord::RecordInvalid
-      flash[:error] = "Error! Asegurese de llenar todos los campos."
     rescue
       flash[:error] = "Error! Asegurese de llenar todos los campos correctamente."
     end
+    
     redirect_to action: 'edit'
   end
 

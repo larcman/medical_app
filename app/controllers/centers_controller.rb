@@ -11,5 +11,4 @@ class CentersController < ApplicationController
     @center = Center.find(params[:id])
     @researches = @center.researches
   end
-
 end
