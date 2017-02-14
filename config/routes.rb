@@ -26,6 +26,14 @@ Rails.application.routes.draw do
   post 'researches/update'
   resources :researches
   
+  get 'people' => 'people#index', as: 'people'
+  get 'people/index'
+  get 'people/new' => 'people#new', as: 'new_person'
+  get 'people/:id/edit' => 'people#edit'
+  put 'people/:id/edit' => 'people#edit', as: 'edit_person'
+  delete 'people/:id' => 'people#destroy'  
+  resources :people
+  
   get 'patients/new' => 'patients#new', as: 'new_patient'
   resources :patients
   

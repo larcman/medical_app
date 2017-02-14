@@ -1,0 +1,55 @@
+<h1> Personas registradas en el sistema </h1>
+
+<div class="spacer-5"></div>
+
+<div class="row header">
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"> Codigo </div>
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Nombre(s) </div>
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Apellidos </div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"> Edad </div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"> Sexo </div>
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Telefono </div>
+  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
+</div>
+
+<% @people.each_with_index do |person, idx| %>
+  <% if (idx % 2 == 0) %>
+    <div class="row content-even">
+	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"><%= person.code %></div>
+	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= person.firstname %></div>
+	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2 "><%= person.lastname %></div>
+	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= person.age %></div>
+	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= person.gender %></div>
+	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2 row-center"><%= person.phone %></div>
+	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Editar", edit_person_path(person.id), { method: "put" } %></div>
+	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", person, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar esta persona?" } %></div>
+	</div>
+  <% else %>
+	<div class="row content-odd">
+	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"><%= person.code %></div>
+	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= person.firstname %></div>
+	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2 "><%= person.lastname %></div>
+	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= person.age %></div>
+	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= person.gender %></div>
+	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2 row-center"><%= person.phone %></div>
+	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Editar", edit_person_path(person.id), { method: "put" } %></div>
+	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", person, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar esta persona?" } %></div>
+	</div>
+  <% end %>
+<% end %>
+
+<div class="row footer">
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"></div>
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"></div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"></div>
+  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
+</div>
+ 
+<div class="spacer-5"></div>
+
+<%= link_to "Nueva Persona", new_person_path, { class: "btn btn-primary"} %>

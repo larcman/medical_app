@@ -8,8 +8,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params(true))
-    center = Center.where(id: '0').first;
-    @user.center_id = center.id
+    usr = User.find(session[:user_id])
+    @user.center_id = usr.center_id
     begin
       @user.save!
       redirect_to action: 'index'
