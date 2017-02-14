@@ -30,7 +30,7 @@
 	            <li><a href="#">Pacientes</a></li>
                 <!--<li><a href="#">Visitas</a></li>-->
 	          <% else %>
-	            <li><%= link_to "Personas", people_path %>	          
+	            <li><%= link_to "Personas", people_path %>
 	            <!--<li><%= link_to "Protocolos", researches_path %></li>-->
 	            <% if current_user && current_user.isadmin %>
 	              <li><%= link_to "Usuarios", users_path, method: "get" %></li>
@@ -42,7 +42,7 @@
 	              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%= current_user.firstname %> <span class="caret"></span></a>
 	              <ul class="dropdown-menu">
 	              	<li class="dropdown-header">Cuenta</li>
-					<li><%= link_to "Editar Usuario", current_user, method: :put %></li>
+					<li><%= link_to "Editar Usuario", edit_user_path(current_user.id), { method: "put" } %></li>
 	                <li role="separator" class="divider"></li>
 	                <li class="dropdown-header">Acciones</li>
 	                <li><a>Configuración</a></li>

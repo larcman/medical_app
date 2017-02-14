@@ -10,16 +10,18 @@ Rails.application.routes.draw do
   get 'centers/:id' => 'centers#show', as: 'center'
   resources :centers
   
-  get 'users' => 'users#index'
+  get 'users' => 'users#index', as: 'users'
   get 'users/index'
-  get 'users/new'
+  get 'users/new' => 'users#new', as: 'new_user'
+  get 'users/:id/edit' => 'users#edit'
+  put 'users/:id/edit' => 'users#edit', as: 'edit_user'
   post 'users/update'
-  put 'users/:id' => 'users#show'
   delete 'users/:id' => 'users#destroy'
   resources :users
   
   get 'researches' => 'researches#index', as: 'researches'
   get 'researches/index'
+  get 'researches/new' => 'researches#index'  
   get 'researches/:id' => 'researches#show', as: 'research'
   get 'researches/:id/edit' => 'researches#edit'
   put 'researches/:id/edit' => 'researches#edit', as: 'edit_research'
@@ -31,6 +33,7 @@ Rails.application.routes.draw do
   get 'people/new' => 'people#new', as: 'new_person'
   get 'people/:id/edit' => 'people#edit'
   put 'people/:id/edit' => 'people#edit', as: 'edit_person'
+  post 'people/update'
   delete 'people/:id' => 'people#destroy'  
   resources :people
   
