@@ -18,7 +18,7 @@ class PatientsController < ApplicationController
       @patient.save!
       flash[:success] = "Paciente añadido al protocolo satisfactoriamente!"
     rescue ActiveRecord::RecordNotUnique
-      flash[:error] = "Error! El codigo elegido ya esta en uso."
+      flash[:error] = "Error! La persona elegida ya es paciente de este protocolo."
     rescue
       flash[:error] = "Error! Asegurese de llenar todos los campos correctamente."
     end
