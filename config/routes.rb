@@ -38,10 +38,14 @@ Rails.application.routes.draw do
   resources :people
   
   get 'patients/new' => 'patients#new', as: 'new_patient'
+  get 'patients/:id' => 'patients#show', as: 'patient'  
   get 'patients/:id/edit' => 'patients#edit'
   put 'patients/:id/edit' => 'patients#edit', as: 'edit_patient'
   post 'patients/update'
   delete 'patients/:id' => 'patients#destroy'
   resources :patients
+  
+  get 'appointments/new' => 'appointments#new', as: 'new_appointment'  
+  resources :appointments
   
 end

@@ -12,7 +12,7 @@
     <%= f.text_field :code, class: 'form-control' %>
 
     <b>Persona</b>
-    <%= f.collection_select :person_id, @people, :id, :firstname, {:include_blank => false}, {:class => 'form-control'} %>
+    <%= f.collection_select :person_id, @people, :id, :firstname, {:include_blank => true}, {:class => 'form-control'} %>
     
     <%= f.hidden_field :research_id, :value => @research.id %>
     <%= f.hidden_field :quick_creation, :value => true %>
@@ -40,7 +40,7 @@
 	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2 "><%= patient.person.firstname %></div>
 	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= patient.person.lastname %></div>
 	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= patient.person.phone %></div>	  
-	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Ver", edit_patient_path(patient.id), { method: "put" } %></div>
+	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Ver", edit_patient_path(patient.id), { method: "put"} %></div>
 	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", patient, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar este paciente?" } %></div>
 	</div>
   <% else %>
@@ -50,7 +50,7 @@
 	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2 "><%= patient.person.firstname %></div>
 	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= patient.person.lastname %></div>
 	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= patient.person.phone %></div>	  
-	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Ver", edit_patient_path(patient.id), { method: "put" } %></div>
+	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Ver", edit_patient_path(patient.id), { method: "put"} %></div>
 	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", patient, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar este paciente?" } %></div>
 	</div>
   <% end %>

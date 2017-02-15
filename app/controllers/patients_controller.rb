@@ -27,10 +27,33 @@ class PatientsController < ApplicationController
   end
 
   def show
+    # redirect to edit
+    @patient = Patient.find(params[:id])
+    redirect_to action: 'edit', id: @patient.id
   end
-
+  
   def edit
+    @patient = Patient.find(params[:id])
+    @research = @patient.research
+    @center = Center.find(@research.center_id)    
+    @appointments = @patient.appointments
+    @people = Person.where("center_id = ?", @center.id);
   end
+  
+  def update
+    @patient = Patient.find(params[:id])
+    
+    begin
+      @patient.update!(patient_params)
+      flash[:success] = "Paciente actualizado satisfactoriamente!"
+    rescue ActiveRecord::RecordNotUnique
+      flash[:error] = "Error! La persona elegida ya es paciente de este protocolo."
+    rescue
+      flash[:error] = "Error! Asegurese de llenar todos los campos correctamente."
+    end
+
+    redirect_to action: 'edit'
+  end  
   
   def destroy
     @patient = Patient.find(params[:id])

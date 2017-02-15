@@ -1,2 +1,78 @@
-<h1>Patients#edit</h1>
-<p>Find me in app/views/patients/edit.html.erb</p>
+<h1> Detalles del Paciente </h1>
+
+<div class="spacer-5"></div>
+
+<h3> Datos generales </h3>
+
+<div class="form-horizontal">
+  <%= form_for(@patient) do |f| %>
+
+    <b>Codigo Medicamento</b>
+    <%= f.text_field :code, class: 'form-control' %>
+    
+    <b>Persona&nbsp;</b> <%= link_to "(Editar)", edit_person_path(@patient.person.id) %>
+    <%= f.collection_select :person_id, @people, :id, :firstname, {:include_blank => false}, {:class => 'form-control'} %>
+
+    <div class="spacer-5"></div>
+    
+    <%= f.submit "Guardar", class: "btn btn-primary" %>   
+    <%= link_to "Atras", research_path(@research.id), class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<div class="spacer-5"></div>
+<div class="spacer-5"></div>
+
+<h3> Visitas </h3>
+
+<div class="row header">
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Dia </div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"> Hora </div>  
+  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Status </div>
+  <div class="col-xs-.4 col-sm-4 col-md-4 col-lg-4"> Comments </div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
+</div>
+
+<% if @appointments.length > 0 %>
+  
+  <% @appointments.each_with_index do |appt, idx| %>
+    <% if (idx % 2 == 0) %>
+      <div class="row content-even">
+        <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= appt.day %></div>
+        <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"><%= appt.starttime %></div>  
+        <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= appt.status %></div>
+        <div class="col-xs-.4 col-sm-4 col-md-4 col-lg-4"><%= appt.comments %></div>  
+	    <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Ver", patient_path(patient.id) %></div>
+	    <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", patient, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar esta visita?" } %></div>
+	  </div>
+    <% else %>
+      <div class="row content-odd">
+        <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= appt.day %></div>
+        <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"><%= appt.starttime %></div>  
+        <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= appt.status %></div>
+        <div class="col-xs-.4 col-sm-4 col-md-4 col-lg-4"><%= appt.comments %></div>  
+	    <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Ver", patient_path(patient.id) %></div>
+	    <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", patient, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar esta visita?" } %></div>
+	  </div>
+    <% end %>
+  <% end %>
+
+  <div class="row footer">
+    <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"></div>
+    <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>  
+    <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"></div>
+    <div class="col-xs-.4 col-sm-4 col-md-4 col-lg-4"></div>
+    <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
+    <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
+  </div>
+
+<% else %>
+
+  <div class="col-lg-11 row-center"><h4>Sin visitas...</h4></div>
+  
+<% end %>
+
+<div class="spacer-5"></div>
+
+<%= link_to "Agregar Visita", new_appointment_path, { class: "btn btn-primary"} %>
