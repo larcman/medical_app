@@ -45,7 +45,12 @@ Rails.application.routes.draw do
   delete 'patients/:id' => 'patients#destroy'
   resources :patients
   
-  get 'appointments/new' => 'appointments#new', as: 'new_appointment'  
+  get 'appointments/new' => 'appointments#new', as: 'new_appointment'
+  get 'appointments/:id' => 'appointments#show', as: 'appointment'  
+  get 'appointments/:id/edit' => 'appointments#edit'
+  put 'appointments/:id/edit' => 'appointments#edit', as: 'edit_appointment'
+  post 'appointments/update'
+  delete 'appointments/:id' => 'appointments#destroy'
   resources :appointments
   
 end

@@ -36,7 +36,7 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
     @research = @patient.research
     @center = Center.find(@research.center_id)    
-    @appointments = @patient.appointments
+    @appointments = @patient.appointments.order(created_at: :asc)
     @people = Person.where("center_id = ?", @center.id);
   end
   

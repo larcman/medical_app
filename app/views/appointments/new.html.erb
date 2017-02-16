@@ -1,0 +1,26 @@
+<h1> Nueva Visita </h1>
+
+<div class="spacer-5"></div>
+
+<div class="form-horizontal">
+  <%= form_for(@appointment) do |f| %>
+    
+    <b>Dia</b>
+    <%= f.date_field :day, class: 'form-control' %>
+      
+    <b>Hora</b>
+    <%= f.time_field :starttime, class: 'form-control' %>      
+
+    <b>Status</b>
+    <%= f.select :status, ['Agendada', 'Completada', 'Cancelada'], {:include_blank => false}, {:class => 'form-control'} %>
+
+    <b>Comentarios</b>
+    <%= f.text_area :comments, class: 'form-control', rows: 7 %>
+      
+    <div class="spacer-5"></div>
+
+    <%= f.hidden_field :patient_id, :value => @patient.id %>
+    <%= f.submit "Guardar", class: "btn btn-primary" %>    
+    <%= link_to "Atras", edit_patient_path(@patient.id), { class: "btn btn-primary" } %>
+  <% end %>
+</div>
