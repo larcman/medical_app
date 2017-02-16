@@ -25,6 +25,27 @@
 
 <h3> Visitas </h3>
 
+<div class="spacer-5"></div>
+
+<div class="form-inline">
+  <%= form_for(@appointment) do |f| %>
+    <b>Dia</b>
+    <%= f.date_field :day, class: 'form-control' %>
+      
+    <b>Hora</b>
+    <%= f.time_field :starttime, class: 'form-control' %>      
+
+    <b>Status</b>
+    <%= f.select :status, ['Agendada', 'Completada', 'Cancelada'], {:include_blank => false}, {:class => 'form-control'} %>
+
+    <%= f.hidden_field :patient_id, :value => @patient.id %>
+    <%= f.hidden_field :quick_creation, :value => true %>
+    <%= f.submit "Agregar Visita", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<div class="spacer-5"></div>
+
 <div class="row header">
   <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Dia </div>
   <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Hora </div>  
@@ -72,7 +93,3 @@
   <div class="col-lg-11 row-center"><h4>Sin visitas...</h4></div>
   
 <% end %>
-
-<div class="spacer-5"></div>
-
-<%= link_to "Agregar Visita", new_appointment_path(@appointment, :patient_id => @patient.id), { class: "btn btn-primary"} %>

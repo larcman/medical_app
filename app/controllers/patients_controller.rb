@@ -38,6 +38,7 @@ class PatientsController < ApplicationController
     @center = Center.find(@research.center_id)    
     @appointments = @patient.appointments.order(created_at: :asc)
     @people = Person.where("center_id = ?", @center.id);
+    @appointment = Appointment.new
   end
   
   def update
