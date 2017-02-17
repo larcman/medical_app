@@ -9,10 +9,10 @@ class AppointmentsController < ApplicationController
   
   def create
     quick_creation = params[:appointment][:quick_creation]
-    patient = Patient.find(params[:appointment][:patient_id])
+    @patient = Patient.find(params[:appointment][:patient_id])
     @appointment = Appointment.new(appointment_params)
-    @appointment.research_id = patient.research_id
-    @appointment.center_id = patient.center_id
+    @appointment.research_id = @patient.research_id
+    @appointment.center_id = @patient.center_id
 
     begin
       @appointment.save!
@@ -21,7 +21,7 @@ class AppointmentsController < ApplicationController
       flash[:error] = "Error! Asegurese de llenar todos los campos correctamente."
     end
 
-    redirect_to controller: 'patients', action: 'edit', id: patient.id
+    redirect_to controller: 'patients', action: 'edit', id: @patient.id
   end
   
   def show
