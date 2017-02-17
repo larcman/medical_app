@@ -2,6 +2,8 @@
 
 <div class="spacer-5"></div>
 
+<h3> Detalles de la Visita </h3>
+
 <div class="form-horizontal">
   <%= form_for(@appointment) do |f| %>
     
@@ -28,17 +30,19 @@
 <div class="spacer-10"></div>
 <div class="spacer-10"></div>
 
-<h1> Evaluación </h1>
+<h3> Evaluaciones </h3>
 
 <div class="spacer-5"></div>
 
 <% if @evaluation %>
-  <%= link_to "(Editar)", edit_evaluation_path(@evaluation.id), { method: "put" } %>
-  <%= link_to "Eliminar Evaluación", delete_evaluation_path(@evaluation.id), { method: "delete", class: "btn btn-primary" } %>
+  <h5><%= "Evaluación agregada el dia " + @evaluation.created_at.strftime("%d/%m/%Y") %></h5>
+  <div class="spacer-5"></div>
+  <%= link_to "Editar", edit_evaluation_path(@evaluation.id), { method: "put", class: "btn btn-primary" } %>
+  <%= link_to "Eliminar", delete_evaluation_path(@evaluation.id), { method: "delete", class: "btn btn-primary" } %>
 
 <% else %>
-  <h4> Sin Evaluacion... </h4>
+  <h5> Sin Evaluacion... </h5>
   <div class="spacer-5"></div>
-  <%= link_to "Agregar Evaluación", new_evaluation_path("appointment_id" => @appointment.id), { class: "btn btn-primary" } %>
+  <%= link_to "Agregar", new_evaluation_path("appointment_id" => @appointment.id), { class: "btn btn-primary" } %>
     
 <% end %>
