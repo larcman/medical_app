@@ -1,0 +1,92 @@
+<h1> Nueva Evaluación </h1>
+
+<div class="spacer-5"></div>
+
+<div class="form-horizontal">
+  <%= form_for(@evaluation) do |f| %>
+  
+    <b>Factor Reumatoide (FR)</b>
+    <%= f.text_field :var_fr, class: 'form-control' %>
+    
+    <b>Anticuerpo anit-peptido citrulinado (ACPA)</b>
+    <%= f.text_field :var_acpa, class: 'form-control' %>
+    
+    <b>Factor de Necrosis Tumoral alfa (TNF-a)</b>
+    <%= f.text_field :var_tnfa, class: 'form-control' %>
+    
+    <b>Interleucina 6 (IL-6)</b>
+    <%= f.text_field :var_il6, class: 'form-control' %>
+    
+    <b>Proteína C reactiva (PCR)</b>
+    <%= f.text_field :var_pcr, class: 'form-control' %>
+    
+    <b>Disease Activity Score 28 (DAS-28)</b>
+    <%= f.text_field :var_das28, class: 'form-control' %>
+    
+    <b>Velocidad de sedimentación globular (VSG)</b>
+    <%= f.text_field :var_vsg, class: 'form-control' %>
+    
+    <b>Health Assessment Questionnaire (HAQ)</b>
+    <%= f.text_field :var_haq, class: 'form-control' %>
+    
+    <b>Velocida de onda de pulso central (VOP)</b>
+    <%= f.text_field :var_vop, class: 'form-control' %>
+    
+    <b>Indice de Aumentación central (IAc)</b>
+    <%= f.text_field :var_iac, class: 'form-control' %>
+    
+    <b>Indice Carotida (IC)</b>
+    <%= f.text_field :var_ic, class: 'form-control' %>
+
+    <b>Tension Arterial (T/A)</b>
+    <%= f.text_field :var_ta, class: 'form-control' %>
+    
+    <b>Frecuencia Cardiaca (FC)</b>
+    <%= f.text_field :var_fc, class: 'form-control' %>
+    
+    <b>Frequencia Respiratoria (Fr)</b>
+    <%= f.text_field :var_fresp, class: 'form-control' %>
+
+    <b>Temperatura (Temp)</b>
+    <%= f.text_field :var_temp, class: 'form-control' %>
+    
+    <b>Lipidos (Lip)</b>
+    <%= f.text_field :var_lip, class: 'form-control' %>
+    
+    <b>Colesterol Total (CT)</b>
+    <%= f.text_field :var_ct, class: 'form-control' %>
+    
+    <b>Trigliceridos (TG)</b>
+    <%= f.text_field :var_tg, class: 'form-control' %>
+    
+    <b>Liproteína de baja densidad (LDL)</b>
+    <%= f.text_field :var_ldl, class: 'form-control' %>
+    
+    <b>Liproteína de muy baja densidad (VLDL)</b>
+    <%= f.text_field :var_vldl, class: 'form-control' %>
+    
+    <b>Liproteína de alta densidad (HDL)</b>
+    <%= f.text_field :var_hdl, class: 'form-control' %>
+    
+    <b>Glucosa (Glu)</b>
+    <%= f.text_field :var_glu, class: 'form-control' %>
+    
+    <b>Peso</b>
+    <%= f.text_field :var_peso, class: 'form-control' %>
+    
+    <b>Talla</b>
+    <%= f.text_field :var_talla, class: 'form-control' %>
+    
+    <b>Indice de masa corporal (IMC)</b>
+    <%= f.text_field :var_imc, class: 'form-control' %>
+    
+    <b>Circunferencia de cintura (CC)</b>
+    <%= f.text_field :var_cc, class: 'form-control' %>
+
+    <%= f.hidden_field :appointment_id, :value => @appointment.id %>
+    <div class="spacer-5"></div>
+
+    <%= f.submit "Guardar", class: "btn btn-primary" %>    
+    <%= link_to "Atras", edit_appointment_path(@appointment.id), class: "btn btn-primary" %>
+  <% end %>
+</div>

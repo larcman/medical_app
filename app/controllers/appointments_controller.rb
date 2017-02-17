@@ -33,7 +33,10 @@ class AppointmentsController < ApplicationController
   def edit
     @appointment = Appointment.find(params[:id])
     @research = @appointment.research
-    # TODO: Add stuf to create evaluations
+    
+    if @appointment.evaluation
+      @evaluation = @appointment.evaluation
+    end
   end
   
   def update
@@ -59,5 +62,5 @@ class AppointmentsController < ApplicationController
   private
   def appointment_params
     params.require(:appointment).permit(:day, :starttime, :status, :comments, :patient_id)
-  end  
+  end
 end

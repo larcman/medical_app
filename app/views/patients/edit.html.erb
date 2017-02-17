@@ -67,8 +67,8 @@
         <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= appt.starttime.strftime("%I:%M %p") %></div>  
         <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2 row-center"><%= appt.status %></div>
         <div class="col-xs-.4 col-sm-4 col-md-4 col-lg-4"><%= appt.comments %></div>
-	    <% if appt.evaluations.count > 0 %>
-	      <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Evaluación", edit_appointment_path(appt.id) %></div>
+	    <% if appt.evaluation %>
+	      <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Evaluación", edit_evaluation_path(appt.evaluation.id) %></div>
 	    <% else %>
           <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"></div>
 	    <% end %>        
@@ -82,8 +82,8 @@
         <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= appt.starttime.strftime("%I:%M %p") %></div>
         <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2 row-center"><%= appt.status %></div>
         <div class="col-xs-.4 col-sm-4 col-md-4 col-lg-4"><%= appt.comments %></div>
-	    <% if appt.evaluations.count > 0 %>
-	      <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Evaluación", edit_appointment_path(appt.id) %></div>
+	    <% if appt.evaluation %>
+	      <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Evaluación", edit_evaluation_path(appt.evaluation.id) %></div>
 	    <% else %>
           <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"></div>
 	    <% end %>        

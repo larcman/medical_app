@@ -3,6 +3,7 @@ class Research < ApplicationRecord
   belongs_to :user
   has_many :patients
   has_many :appointments
+  has_many :evaluations
   
   validates :code, presence: true
   validates :name, presence: true

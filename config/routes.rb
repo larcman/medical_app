@@ -53,4 +53,12 @@ Rails.application.routes.draw do
   delete 'appointments/:id' => 'appointments#destroy'
   resources :appointments
   
+  get 'evaluations/new' => 'evaluations#new', as: 'new_evaluation'
+  get 'evaluations/:id' => 'evaluations#show', as: 'evaluation'  
+  get 'evaluations/:id/edit' => 'evaluations#edit'
+  put 'evaluations/:id/edit' => 'evaluations#edit', as: 'edit_evaluation'
+  post 'evaluations/update'
+  delete 'evaluations/:id' => 'evaluations#destroy', as: 'delete_evaluation'
+  resources :evaluations
+    
 end

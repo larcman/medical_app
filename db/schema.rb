@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214060403) do
+ActiveRecord::Schema.define(version: 20170217054328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 20170214060403) do
     t.datetime "updated_at",     null: false
     t.string   "appointment_id", null: false
     t.string   "center_id",      null: false
+    t.string   "var_fresp"
+    t.string   "research_id",    null: false
   end
 
   create_table "patients", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
@@ -133,6 +135,7 @@ ActiveRecord::Schema.define(version: 20170214060403) do
   add_foreign_key "appointments", "researches", name: "appointments_research_fk"
   add_foreign_key "evaluations", "appointments", name: "evaluations_appointment_fk"
   add_foreign_key "evaluations", "centers", name: "evaluations_center_fk"
+  add_foreign_key "evaluations", "researches", name: "evaluations_research_fk"
   add_foreign_key "patients", "centers", name: "patients_center_fk"
   add_foreign_key "patients", "people", name: "patients_people_fk"
   add_foreign_key "patients", "researches", name: "patients_researches_fk"
