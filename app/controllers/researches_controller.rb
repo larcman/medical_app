@@ -15,7 +15,7 @@ class ResearchesController < ApplicationController
     
     # Stuff for the Quick creation form
     @patient = Patient.new
-    @people = Person.where("center_id = ?", @center.id);
+    @people = Person.where("center_id = ?", @center.id).order(firstname: :asc);
   end
 
   def edit

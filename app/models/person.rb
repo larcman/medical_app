@@ -6,4 +6,8 @@ class Person < ApplicationRecord
   validates :elaborationdate, presence: true
   validates :firstname, presence: true
   validates :lastname, presence: true
+  
+  def identifier
+    @identifier = firstname + " " + lastname + " (" + code + ")"
+  end
 end
