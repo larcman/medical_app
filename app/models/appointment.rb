@@ -2,5 +2,5 @@ class Appointment < ApplicationRecord
   belongs_to :center
   belongs_to :patient
   belongs_to :research
-  has_many :evaluations
+  has_many :evaluations, dependent: :destroy
 end
