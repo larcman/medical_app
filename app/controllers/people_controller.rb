@@ -54,7 +54,14 @@ class PeopleController < ApplicationController
 
   def destroy
     @person = Person.find(params[:id])
-    @person.destroy
+    
+    begin
+      @person.destroy
+    rescue ActiveRecord::InvalidForeignKey
+      flash[:error] = "Esta persona es paciente de al menos un protocolo.
+      Elimine todos los pacientes ligados a esta persona e intente de nuevo."
+    end
+    
     redirect_to action: 'index'
   end
   

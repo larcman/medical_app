@@ -55,7 +55,14 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
+    
+    begin
+      @user.destroy
+    rescue ActiveRecord::InvalidForeignKey
+      flash[:error] = "Este usuario es el encargado de al menos un procolo.
+      Reasigne todos los protocolos de este usuario e intente de nuevo."
+    end
+    
     redirect_to action: 'index'
   end
 
