@@ -7,10 +7,10 @@
 <div class="form-horizontal">
   <%= form_for(@patient) do |f| %>
 
-    <b>Codigo Medicamento</b>
+    <b>Codigo <%= @research.code %></b>
     <%= f.text_field :code, class: 'form-control' %>
     
-    <b>Persona&nbsp;</b> <%= link_to "(Editar)", edit_person_path(@patient.person.id) %>
+    <b>Candidato&nbsp;</b> <%= link_to "(Editar)", edit_person_path(@patient.person.id) %>
     <%= f.collection_select :person_id, @people, :id, :firstname, {:include_blank => false}, {:class => 'form-control'} %>
 
     <div class="spacer-5"></div>

@@ -1,12 +1,15 @@
-<h1> Nueva Persona </h1>
+<h1> Nuevo Candidato </h1>
 
 <div class="spacer-5"></div>
 
 <div class="form-horizontal">
   <%= form_for(@person) do |f| %>
 
-    <b>Codigo</b>
+    <b>Codigo IIRSME</b>
     <%= f.text_field :code, class: 'form-control' %>
+    
+    <b>Codigo AR</b>
+    <%= f.text_field :arcode, class: 'form-control' %>
     
     <b>Fecha de Elaboración</b>
     <%= f.date_field :elaborationdate, class: 'form-control' %>
@@ -38,10 +41,10 @@
     <b>Lugar de Nacimiento</b>
     <%= f.text_field :birthplace, class: 'form-control' %>
     
-    <b>Calle 1</b>
+    <b>Calle</b>
     <%= f.text_field :address1, class: 'form-control' %>
     
-    <b>Calle 2</b>
+    <b>Cruza con</b>
     <%= f.text_field :address2, class: 'form-control' %>
     
     <b>Colonia</b>

@@ -14,7 +14,7 @@ class PeopleController < ApplicationController
       @person.save!
       redirect_to action: 'index'
     rescue ActiveRecord::RecordNotUnique
-      flash[:error] = "Error! El codigo elegido, ya esta en uso."
+      flash[:error] = "Error! El codigo IIRSME elegido ya esta en uso."
       redirect_to action: 'new'
     rescue
       flash[:error] = "Error! Asegurese de llenar todos los campos correctamente."
@@ -24,7 +24,7 @@ class PeopleController < ApplicationController
   
   def index
     user = User.find(session[:user_id])
-    @people = Person.where("center_id = ?", user.center_id).order(firstname: :asc)
+    @people = Person.where("center_id = ?", user.center_id).order(code: :asc)
   end
 
   def show
@@ -42,9 +42,9 @@ class PeopleController < ApplicationController
 
     begin
       @person.update!(person_params)
-      flash[:success] = "Persona actualizada satisfactoriamente!"
+      flash[:success] = "Candidato actualizado satisfactoriamente!"
     rescue ActiveRecord::RecordNotUnique
-      flash[:error] = "Error! El codigo elegido, ya esta en uso."
+      flash[:error] = "Error! El codigo IIRSME elegido ya esta en uso."
     rescue
       flash[:error] = "Error! Asegurese de llenar todos los campos correctamente."
     end
@@ -58,8 +58,8 @@ class PeopleController < ApplicationController
     begin
       @person.destroy
     rescue ActiveRecord::InvalidForeignKey
-      flash[:error] = "Esta persona es paciente de al menos un protocolo.
-      Elimine todos los pacientes ligados a esta persona e intente de nuevo."
+      flash[:error] = "Este candidato es paciente de al menos un protocolo.
+      Elimine todos los pacientes ligados a este candidato e intente de nuevo."
     end
     
     redirect_to action: 'index'
@@ -67,8 +67,8 @@ class PeopleController < ApplicationController
   
   private
   def person_params
-    params.require(:person).permit(:code, :elaborationdate, :firstname, :lastname, :birthdate,
-      :age, :gender, :maritalstatus, :occupation, :education, :birthplace, :address1, :address2,
-      :region, :zipcode, :city, :state, :phone, :cellphone, :email)
+    params.require(:person).permit(:code, :arcode, :elaborationdate, :firstname, :lastname, 
+      :birthdate, :age, :gender, :maritalstatus, :occupation, :education, :birthplace, 
+      :address1, :address2, :region, :zipcode, :city, :state, :phone, :cellphone, :email)
   end
 end

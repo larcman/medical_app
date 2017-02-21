@@ -11,7 +11,7 @@ class ResearchesController < ApplicationController
   def show
     @research = Research.find(params[:id])
     @center = Center.find(@research.center_id)
-    @patients = @research.patients.order(created_at: :asc)
+    @patients = @research.patients.order(code: :asc)
     
     # Stuff for the Quick creation form
     @patient = Patient.new
