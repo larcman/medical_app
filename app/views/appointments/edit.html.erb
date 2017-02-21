@@ -14,7 +14,7 @@
     <%= f.time_field :starttime, class: 'form-control' %>      
 
     <b>Status</b>
-    <%= f.select :status, ['Agendada', 'Completada', 'Cancelada'], {:include_blank => false}, {:class => 'form-control'} %>
+    <%= f.select :status, ['Pendiente Agendar', 'Agendada', 'Completada', 'Cancelada'], {:include_blank => false}, {:class => 'form-control'} %>
 
     <b>Comentarios</b>
     <%= f.text_area :comments, class: 'form-control', rows: 7 %>
