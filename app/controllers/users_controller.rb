@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def create
     usr = User.find(session[:user_id])
-    @user = User.new(user_params(true))
+    @user = User.new(user_params)
     @user.center_id = usr.center_id
 
     begin
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     begin
-      @user.update!(user_params(false))
+      @user.update!(user_params)
       flash[:success] = "Usuario actualizado satisfactoriamente!"
     rescue ActiveRecord::RecordNotUnique
       flash[:error] = "Error! El nombre de usuario elegido, ya esta en uso."
@@ -67,11 +67,7 @@ class UsersController < ApplicationController
   end
 
   private
-  def user_params (create)
-    if (create)
-      params.require(:user).permit(:firstname, :lastname, :email, :username, :password)
-    else
-      params.require(:user).permit(:firstname, :lastname, :email, :username, :password, :isadmin)
-    end  
+  def user_params
+    params.require(:user).permit(:firstname, :lastname, :email, :username, :password, :isadmin)
   end
 end

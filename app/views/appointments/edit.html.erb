@@ -35,7 +35,7 @@
 <div class="spacer-5"></div>
 
 <% if @evaluation %>
-  <h5><%= "Evaluación agregada el dia " + @evaluation.created_at.strftime("%d/%m/%Y") %></h5>
+  <h5> Evaluación disponible </h5>
   <div class="spacer-5"></div>
   <%= link_to "Editar", edit_evaluation_path(@evaluation.id), { method: "put", class: "btn btn-primary" } %>
   <%= link_to "Eliminar", delete_evaluation_path(@evaluation.id), { method: "delete", class: "btn btn-primary" } %>
