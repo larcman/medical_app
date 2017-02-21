@@ -8,7 +8,7 @@
 
 <div class="form-inline">
   <%= form_for(@patient) do |f| %>
-    <b>Codigo</b>
+    <b>Codigo <%= @research.code %></b>
     <%= f.text_field :code, class: 'form-control' %>
 
     <b>Candidato</b>
