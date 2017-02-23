@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170221195433) do
+ActiveRecord::Schema.define(version: 20170223214959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,10 +80,10 @@ ActiveRecord::Schema.define(version: 20170221195433) do
   end
 
   create_table "people", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
-    t.string   "code",            null: false
-    t.date     "elaborationdate", null: false
-    t.string   "firstname",       null: false
-    t.string   "lastname",        null: false
+    t.string   "code",                 null: false
+    t.date     "elaborationdate",      null: false
+    t.string   "firstname",            null: false
+    t.string   "lastname",             null: false
     t.date     "birthdate"
     t.integer  "age"
     t.string   "gender"
@@ -100,10 +100,20 @@ ActiveRecord::Schema.define(version: 20170221195433) do
     t.string   "phone"
     t.string   "cellphone"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "center_id",       null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "center_id",            null: false
     t.string   "arcode"
+    t.string   "health_status"
+    t.string   "obesity"
+    t.string   "dm2"
+    t.string   "hta"
+    t.string   "ecv"
+    t.string   "iam"
+    t.string   "irc"
+    t.string   "evc"
+    t.string   "cancer"
+    t.string   "hypercholesterolemia"
     t.index ["code"], name: "people_unique_code", unique: true, using: :btree
   end
 

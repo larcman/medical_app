@@ -69,6 +69,7 @@ class PeopleController < ApplicationController
   def person_params
     params.require(:person).permit(:code, :arcode, :elaborationdate, :firstname, :lastname, 
       :birthdate, :age, :gender, :maritalstatus, :occupation, :education, :birthplace, 
-      :address1, :address2, :region, :zipcode, :city, :state, :phone, :cellphone, :email)
+      :address1, :address2, :region, :zipcode, :city, :state, :phone, :cellphone, :email,
+      :health_status, :obesity, :dm2, :hta, :ecv, :iam, :irc, :evc, :cancer, :hypercholesterolemia)
   end
 end

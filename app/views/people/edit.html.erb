@@ -13,6 +13,7 @@
   <%= form_for(@person) do |f| %>
     <div class="tab-content">
 
+	<!-- 1st Tab -->
     <div role="tabpanel" class="tab-pane active" id="tab0">
       <div class="spacer-5"></div>
 
@@ -82,16 +83,50 @@
         <div class="spacer-5"></div>		
 	</div>
 	
+	<!-- 2nd Tab -->
 	<div role="tabpanel" class="tab-pane" id="tab1">
       <div class="spacer-5"></div>
+
+	  <b>¿Como considera su estado actual de salud?</b>
+	  <%= f.select :health_status, ['Bueno', 'Regular', 'Malo'], {:include_blank => true}, {:class => 'form-control'} %>
+ 
+	  <b>Obesidad / Sobrepeso</b>
+	  <%= f.text_field :obesity, class: 'form-control' %> 
+      
+	  <b>DM2</b>
+	  <%= f.text_field :dm2, class: 'form-control' %>
+	  
+	  <b>HTA</b>
+	  <%= f.text_field :hta, class: 'form-control' %>
+	  
+	  <b>ECV</b>
+	  <%= f.text_field :ecv, class: 'form-control' %>
+	  
+	  <b>IAM</b>
+	  <%= f.text_field :iam, class: 'form-control' %>
+
+	  <b>IRC</b>
+	  <%= f.text_field :irc, class: 'form-control' %>
+	  
+	  <b>EVC</b>
+	  <%= f.text_field :evc, class: 'form-control' %>
+	  
+	  <b>Cancer</b>
+	  <%= f.text_field :cancer, class: 'form-control' %>
+	  
+	  <b>Hipercolesterolemia</b>
+	  <%= f.text_field :hypercholesterolemia, class: 'form-control' %>	  	  	  
+      
       <div class="spacer-5"></div>
 	</div>
 	
+	<!-- 3rd Tab -->
 	<div role="tabpanel" class="tab-pane" id="tab2">
       <div class="spacer-5"></div>
       <div class="spacer-5"></div>
     </div>
 	
+	<!-- 4th Tab -->
 	<div role="tabpanel" class="tab-pane" id="tab3">
       <div class="spacer-5"></div>
       <div class="spacer-5"></div>
