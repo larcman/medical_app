@@ -2,75 +2,103 @@
 
 <div class="spacer-5"></div>
 
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#tab0" aria-controls="tab0" role="tab" data-toggle="tab">Datos Generales</a></li>
+  <li role="presentation"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Antecedentes Familiares</a></li>
+  <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Antecedentes Patológicos</a></li>
+  <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Medicamentos</a></li>
+</ul>
+
 <div class="form-horizontal">
   <%= form_for(@person) do |f| %>
+    <div class="tab-content">
 
-    <b>Codigo IIRSME</b>
-    <%= f.text_field :code, class: 'form-control' %>
-    
-    <b>Codigo AR</b>
-    <%= f.text_field :arcode, class: 'form-control' %>
-    
-    <b>Fecha de Elaboración</b>
-    <%= f.date_field :elaborationdate, class: 'form-control' %>
-    
-    <b>Nombre(s)</b>
-    <%= f.text_field :firstname, class: 'form-control' %>
-      
-    <b>Apellidos</b>
-    <%= f.text_field :lastname, class: 'form-control' %>
-    
-    <b>Fecha de Nacimiento</b>
-    <%= f.date_field :birthdate, class: 'form-control' %>
-    
-    <b>Edad</b>
-    <%= f.number_field :age, class: 'form-control' %>
-    
-    <b>Sexo</b>
-    <%= f.select :gender, ['Hombre', 'Mujer'], {:include_blank => true}, {:class => 'form-control'} %>
-    
-    <b>Estado Civil</b>
-    <%= f.text_field :maritalstatus, class: 'form-control' %>
+    <div role="tabpanel" class="tab-pane active" id="tab0">
+      <div class="spacer-5"></div>
 
-    <b>Ocupación</b>
-    <%= f.text_field :occupation, class: 'form-control' %>
-    
-    <b>Nivel de Estudios</b>
-    <%= f.text_field :education, class: 'form-control' %>
-
-    <b>Lugar de Nacimiento</b>
-    <%= f.text_field :birthplace, class: 'form-control' %>
-    
-    <b>Calle</b>
-    <%= f.text_field :address1, class: 'form-control' %>
-    
-    <b>Cruza con</b>
-    <%= f.text_field :address2, class: 'form-control' %>
-    
-    <b>Colonia</b>
-    <%= f.text_field :region, class: 'form-control' %>
-    
-    <b>Codigo Postal</b>
-    <%= f.text_field :zipcode, class: 'form-control' %>
-    
-    <b>Ciudad</b>
-    <%= f.text_field :city, class: 'form-control' %>
-    
-    <b>Estado</b>
-    <%= f.text_field :state, class: 'form-control' %>
-    
-    <b>Telefono</b>
-    <%= f.text_field :phone, class: 'form-control' %>
-    
-    <b>Celular</b>
-    <%= f.text_field :cellphone, class: 'form-control' %>  
-    
-    <b>Correo</b>
-    <%= f.text_field :email, class: 'form-control' %>  
-
-    <div class="spacer-5"></div>
-
+	    <b>Codigo IIRSME</b>
+	    <%= f.text_field :code, class: 'form-control' %>
+	    
+	    <b>Codigo AR</b>
+	    <%= f.text_field :arcode, class: 'form-control' %>
+	    
+	    <b>Fecha de Elaboración</b>
+	    <%= f.date_field :elaborationdate, class: 'form-control' %>
+	    
+	    <b>Nombre(s)</b>
+	    <%= f.text_field :firstname, class: 'form-control' %>
+	      
+	    <b>Apellidos</b>
+	    <%= f.text_field :lastname, class: 'form-control' %>
+	    
+	    <b>Fecha de Nacimiento</b>
+	    <%= f.date_field :birthdate, class: 'form-control' %>
+	    
+	    <b>Edad</b>
+	    <%= f.number_field :age, class: 'form-control' %>
+	    
+	    <b>Sexo</b>
+	    <%= f.select :gender, ['Hombre', 'Mujer'], {:include_blank => true}, {:class => 'form-control'} %>
+	    
+	    <b>Estado Civil</b>
+	    <%= f.text_field :maritalstatus, class: 'form-control' %>
+	
+	    <b>Ocupación</b>
+	    <%= f.text_field :occupation, class: 'form-control' %>
+	    
+	    <b>Nivel de Estudios</b>
+	    <%= f.text_field :education, class: 'form-control' %>
+	
+	    <b>Lugar de Nacimiento</b>
+	    <%= f.text_field :birthplace, class: 'form-control' %>
+	    
+	    <b>Calle</b>
+	    <%= f.text_field :address1, class: 'form-control' %>
+	    
+	    <b>Cruza con</b>
+	    <%= f.text_field :address2, class: 'form-control' %>
+	    
+	    <b>Colonia</b>
+	    <%= f.text_field :region, class: 'form-control' %>
+	    
+	    <b>Codigo Postal</b>
+	    <%= f.text_field :zipcode, class: 'form-control' %>
+	    
+	    <b>Ciudad</b>
+	    <%= f.text_field :city, class: 'form-control' %>
+	    
+	    <b>Estado</b>
+	    <%= f.text_field :state, class: 'form-control' %>
+	    
+	    <b>Telefono</b>
+	    <%= f.text_field :phone, class: 'form-control' %>
+	    
+	    <b>Celular</b>
+	    <%= f.text_field :cellphone, class: 'form-control' %>  
+	    
+	    <b>Correo</b>
+	    <%= f.text_field :email, class: 'form-control' %>  	
+		
+        <div class="spacer-5"></div>		
+	</div>
+	
+	<div role="tabpanel" class="tab-pane" id="tab1">
+      <div class="spacer-5"></div>
+      <div class="spacer-5"></div>
+	</div>
+	
+	<div role="tabpanel" class="tab-pane" id="tab2">
+      <div class="spacer-5"></div>
+      <div class="spacer-5"></div>
+    </div>
+	
+	<div role="tabpanel" class="tab-pane" id="tab3">
+      <div class="spacer-5"></div>
+      <div class="spacer-5"></div>
+	</div>
+	
+    </div>
     <%= f.submit "Guardar", class: "btn btn-primary" %>    
     <%= link_to "Atras", people_path, class: "btn btn-primary" %>
-  <% end %>
+  <% end %>	
 </div>
