@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224034751) do
+ActiveRecord::Schema.define(version: 20170224043545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,6 +134,20 @@ ActiveRecord::Schema.define(version: 20170224034751) do
     t.string   "p_hormones"
     t.string   "p_diagnosisdate"
     t.string   "p_disease_startdate"
+    t.string   "meds1"
+    t.string   "doses1"
+    t.string   "meds2"
+    t.string   "doses2"
+    t.string   "meds3"
+    t.string   "doses3"
+    t.string   "meds4"
+    t.string   "doses4"
+    t.string   "meds5"
+    t.string   "doses5"
+    t.string   "meds6"
+    t.string   "doses6"
+    t.string   "meds7"
+    t.string   "doses7"
     t.index ["code"], name: "people_unique_code", unique: true, using: :btree
   end
 

@@ -73,7 +73,9 @@ class PeopleController < ApplicationController
       :health_status, :obesity, :dm2, :hta, :ecv, :iam, :irc, :evc, :cancer, :hypercholesterolemia,
       :p_medications, :p_smoking, :p_alcoholism, :p_addictions, :p_obesity, :p_dm2, :p_hta, :p_ecv,
       :p_iam, :p_irc, :p_evc, :p_cancer, :p_hypercholesterolemia, :p_antobst, :p_menarche,
-      :p_ritmo, :p_fum, :p_hormones, :p_diagnosisdate, :p_disease_startdate
+      :p_ritmo, :p_fum, :p_hormones, :p_diagnosisdate, :p_disease_startdate,
+      :meds1, :doses1, :meds2, :doses2, :meds3, :doses3, :meds4, :doses4, :meds5, :doses5, 
+      :meds6, :doses6, :meds7, :doses7
     )
   end
 end
