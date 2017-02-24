@@ -70,6 +70,10 @@ class PeopleController < ApplicationController
     params.require(:person).permit(:code, :arcode, :elaborationdate, :firstname, :lastname, 
       :birthdate, :age, :gender, :maritalstatus, :occupation, :education, :birthplace, 
       :address1, :address2, :region, :zipcode, :city, :state, :phone, :cellphone, :email,
-      :health_status, :obesity, :dm2, :hta, :ecv, :iam, :irc, :evc, :cancer, :hypercholesterolemia)
+      :health_status, :obesity, :dm2, :hta, :ecv, :iam, :irc, :evc, :cancer, :hypercholesterolemia,
+      :p_medications, :p_smoking, :p_alcoholism, :p_addictions, :p_obesity, :p_dm2, :p_hta, :p_ecv,
+      :p_iam, :p_irc, :p_evc, :p_cancer, :p_hypercholesterolemia, :p_antobst, :p_menarche,
+      :p_ritmo, :p_fum, :p_hormones, :p_diagnosisdate, :p_disease_startdate
+    )
   end
 end

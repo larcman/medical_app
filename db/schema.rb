@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170223214959) do
+ActiveRecord::Schema.define(version: 20170224034751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,10 +80,10 @@ ActiveRecord::Schema.define(version: 20170223214959) do
   end
 
   create_table "people", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
-    t.string   "code",                 null: false
-    t.date     "elaborationdate",      null: false
-    t.string   "firstname",            null: false
-    t.string   "lastname",             null: false
+    t.string   "code",                   null: false
+    t.date     "elaborationdate",        null: false
+    t.string   "firstname",              null: false
+    t.string   "lastname",               null: false
     t.date     "birthdate"
     t.integer  "age"
     t.string   "gender"
@@ -100,9 +100,9 @@ ActiveRecord::Schema.define(version: 20170223214959) do
     t.string   "phone"
     t.string   "cellphone"
     t.string   "email"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.string   "center_id",            null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "center_id",              null: false
     t.string   "arcode"
     t.string   "health_status"
     t.string   "obesity"
@@ -114,6 +114,26 @@ ActiveRecord::Schema.define(version: 20170223214959) do
     t.string   "evc"
     t.string   "cancer"
     t.string   "hypercholesterolemia"
+    t.string   "p_medications"
+    t.string   "p_smoking"
+    t.string   "p_alcoholism"
+    t.string   "p_addictions"
+    t.string   "p_obesity"
+    t.string   "p_dm2"
+    t.string   "p_hta"
+    t.string   "p_ecv"
+    t.string   "p_iam"
+    t.string   "p_irc"
+    t.string   "p_evc"
+    t.string   "p_cancer"
+    t.string   "p_hypercholesterolemia"
+    t.string   "p_antobst"
+    t.string   "p_menarche"
+    t.string   "p_ritmo"
+    t.string   "p_fum"
+    t.string   "p_hormones"
+    t.string   "p_diagnosisdate"
+    t.string   "p_disease_startdate"
     t.index ["code"], name: "people_unique_code", unique: true, using: :btree
   end
 
