@@ -15,69 +15,124 @@
     <div role="tabpanel" class="tab-pane active" id="tab0">
       <div class="spacer-5"></div>
 
+	  <div class="col-md-6">
 	    <b>Codigo IIRSME</b>
 	    <%= f.text_field :code, class: 'form-control' %>
+	  </div>
 	    
+	  <div class="col-md-6">	    
 	    <b>Codigo AR</b>
 	    <%= f.text_field :arcode, class: 'form-control' %>
-	    
+	  </div>
+	  	    
+	  <div class="col-md-12">	    
 	    <b>Fecha de Elaboración</b>
 	    <%= f.date_field :elaborationdate, class: 'form-control' %>
-	    
+	  </div>
+	  	    
+	  <div class="col-md-6">	    
 	    <b>Nombre(s)</b>
 	    <%= f.text_field :firstname, class: 'form-control' %>
-	      
+	  </div>
+	  	      
+	  <div class="col-md-6">	      
 	    <b>Apellidos</b>
 	    <%= f.text_field :lastname, class: 'form-control' %>
-	    
+	  </div>
+	  	    
+	  <div class="col-md-6">	    
 	    <b>Fecha de Nacimiento</b>
 	    <%= f.date_field :birthdate, class: 'form-control' %>
-	    
+	  </div>
+	  
+	  <div class="col-md-2">	    
 	    <b>Edad</b>
 	    <%= f.number_field :age, class: 'form-control' %>
-	    
+	  </div>
+	  	    
+	  <div class="col-md-2">	    
 	    <b>Sexo</b>
 	    <%= f.select :gender, ['Hombre', 'Mujer'], {:include_blank => true}, {:class => 'form-control'} %>
-	    
+	  </div>
+	  	    
+	  <div class="col-md-6">	    
 	    <b>Estado Civil</b>
 	    <%= f.text_field :maritalstatus, class: 'form-control' %>
-	
+	  </div>
+	  	
+	  <div class="col-md-6">	
 	    <b>Ocupación</b>
 	    <%= f.text_field :occupation, class: 'form-control' %>
+	  </div>	    
 	    
+	  <div class="col-md-6">	    
 	    <b>Nivel de Estudios</b>
 	    <%= f.text_field :education, class: 'form-control' %>
+	  </div>	
 	
+	  <div class="col-md-6">	
 	    <b>Lugar de Nacimiento</b>
 	    <%= f.text_field :birthplace, class: 'form-control' %>
-	    
+	  </div>
+	  
+	  
+	  <div class="spacer-5"></div>
+	  <div class="spacer-5"></div>	  
+	  <div class="col-md-12">
+	  	<h4> Domicilio </h4>
+	  </div>	  	
+	  	  	    
+	  <div class="col-md-10">	    
 	    <b>Calle</b>
 	    <%= f.text_field :address1, class: 'form-control' %>
-	    
+	  </div>
+	  	    
+	  <div class="col-md-10">	    
 	    <b>Cruza con</b>
 	    <%= f.text_field :address2, class: 'form-control' %>
-	    
+	  </div>
+	  	    
+	  <div class="col-md-6">	    
 	    <b>Colonia</b>
 	    <%= f.text_field :region, class: 'form-control' %>
-	    
+	  </div>
+	  	    
+	  <div class="col-md-2">	    
 	    <b>Codigo Postal</b>
 	    <%= f.text_field :zipcode, class: 'form-control' %>
-	    
+	  </div>
+	  	    
+	  <div class="col-md-6">	    
 	    <b>Ciudad</b>
 	    <%= f.text_field :city, class: 'form-control' %>
-	    
+	  </div>
+	  	    
+	  <div class="col-md-6">	    
 	    <b>Estado</b>
 	    <%= f.text_field :state, class: 'form-control' %>
-	    
+	  </div>
+
+	  <div class="spacer-5"></div>
+	  <div class="spacer-5"></div>	  
+	  <div class="col-md-12">
+	  	<h4> Contacto </h4>
+	  </div>
+	  	  	    
+	  <div class="col-md-4">	    
 	    <b>Telefono</b>
 	    <%= f.text_field :phone, class: 'form-control' %>
-	    
+	  </div>
+	  	    
+	  <div class="col-md-4">	    
 	    <b>Celular</b>
 	    <%= f.text_field :cellphone, class: 'form-control' %>  
-	    
+	  </div>
+	  	    
+	  <div class="col-md-8">	    
 	    <b>Correo</b>
 	    <%= f.text_field :email, class: 'form-control' %>  	
-		
+	  </div>
+	  		
         <div class="spacer-5"></div>		
 	</div>
 
@@ -86,36 +141,56 @@
 	<div role="tabpanel" class="tab-pane" id="tab1">
       <div class="spacer-5"></div>
 
-	  <b>¿Como considera su estado actual de salud?</b>
-	  <%= f.select :health_status, ['Bueno', 'Regular', 'Malo'], {:include_blank => true}, {:class => 'form-control'} %>
- 
-	  <b>Obesidad / Sobrepeso</b>
-	  <%= f.text_field :obesity, class: 'form-control' %> 
-      
-	  <b>DM2</b>
-	  <%= f.text_field :dm2, class: 'form-control' %>
+	  <div class="col-md-5">
+	    <b>¿Como considera su estado actual de salud?</b>
+	    <%= f.select :health_status, ['Bueno', 'Regular', 'Malo'], {:include_blank => true}, {:class => 'form-control'} %>
+	  </div>
+	  	    
+	  <div class="col-md-8"> 
+	    <b>Obesidad / Sobrepeso</b>
+	    <%= f.text_field :obesity, class: 'form-control' %> 
+	  </div>
+	        
+	  <div class="col-md-8">      
+	    <b>DM2</b>
+	    <%= f.text_field :dm2, class: 'form-control' %>
+	  </div>
+	  	  
+	  <div class="col-md-8">	  
+	    <b>HTA</b>
+	    <%= f.text_field :hta, class: 'form-control' %>
+	  </div>
+	  	  
+	  <div class="col-md-8">	  
+	    <b>ECV</b>
+	    <%= f.text_field :ecv, class: 'form-control' %>
+	  </div>
+	  	  
+	  <div class="col-md-8">	  
+	    <b>IAM</b>
+	    <%= f.text_field :iam, class: 'form-control' %>
+	  </div>
 	  
-	  <b>HTA</b>
-	  <%= f.text_field :hta, class: 'form-control' %>
-	  
-	  <b>ECV</b>
-	  <%= f.text_field :ecv, class: 'form-control' %>
-	  
-	  <b>IAM</b>
-	  <%= f.text_field :iam, class: 'form-control' %>
-
-	  <b>IRC</b>
-	  <%= f.text_field :irc, class: 'form-control' %>
-	  
-	  <b>EVC</b>
-	  <%= f.text_field :evc, class: 'form-control' %>
-	  
-	  <b>Cancer</b>
-	  <%= f.text_field :cancer, class: 'form-control' %>
-	  
-	  <b>Hipercolesterolemia</b>
-	  <%= f.text_field :hypercholesterolemia, class: 'form-control' %>	  	  	  
-      
+	  <div class="col-md-8">
+	    <b>IRC</b>
+	    <%= f.text_field :irc, class: 'form-control' %>
+	  </div>
+	  	  
+	  <div class="col-md-8">	  
+	    <b>EVC</b>
+	    <%= f.text_field :evc, class: 'form-control' %>
+	  </div>
+	  	  
+	  <div class="col-md-8">	  
+	    <b>Cancer</b>
+	    <%= f.text_field :cancer, class: 'form-control' %>
+	  </div>
+	  	  
+	  <div class="col-md-8">	  
+	    <b>Hipercolesterolemia</b>
+	    <%= f.text_field :hypercholesterolemia, class: 'form-control' %>	  	  	  
+	  </div>
+	        
       <div class="spacer-5"></div>
 	</div>
 
@@ -124,69 +199,115 @@
 	<div role="tabpanel" class="tab-pane" id="tab2">
       <div class="spacer-5"></div>
       
-	  <b>Consumo de Medicamentos</b>
-	  <%= f.text_field :p_medications, class: 'form-control' %>
-	  
-	  <b>Tabaquismo (No. de Cigarrillos, Fumador Pasivo, Tiempo de Consumo)</b>
-	  <%= f.text_field :p_smoking, class: 'form-control' %>
-	  
-	  <b>Alcoholismo (Frequencia,  Cantidad, Tiempo de Consumo)</b>
-	  <%= f.text_field :p_alcoholism, class: 'form-control' %>
-	  
-	  <b>Toxicomanias</b>
-	  <%= f.text_field :p_addictions, class: 'form-control' %>
-	  
-	  <b>Obesidad / Sobrepeso</b>
-	  <%= f.text_field :p_obesity, class: 'form-control' %> 
-      
-	  <b>DM2</b>
-	  <%= f.text_field :p_dm2, class: 'form-control' %>
-	  
-	  <b>HTA</b>
-	  <%= f.text_field :p_hta, class: 'form-control' %>
-	  
-	  <b>ECV</b>
-	  <%= f.text_field :p_ecv, class: 'form-control' %>
-	  
-	  <b>IAM</b>
-	  <%= f.text_field :p_iam, class: 'form-control' %>
+	  <div class="col-md-12">
+	    <b>Consumo de Medicamentos</b>
+	    <%= f.text_field :p_medications, class: 'form-control' %>
+	  </div>
 
-	  <b>IRC</b>
-	  <%= f.text_field :p_irc, class: 'form-control' %>
+	  <div class="col-md-12">	  
+	    <b>Tabaquismo (No. de Cigarrillos, Fumador Pasivo, Tiempo de Consumo)</b>
+	    <%= f.text_field :p_smoking, class: 'form-control' %>
+	  </div>
 	  
-	  <b>EVC</b>
-	  <%= f.text_field :p_evc, class: 'form-control' %>
+	  <div class="col-md-12">	  
+	    <b>Alcoholismo (Frequencia,  Cantidad, Tiempo de Consumo)</b>
+	    <%= f.text_field :p_alcoholism, class: 'form-control' %>
+	  </div>
 	  
-	  <b>Cancer</b>
-	  <%= f.text_field :p_cancer, class: 'form-control' %>
+	  <div class="col-md-12">	  
+	    <b>Toxicomanias</b>
+	    <%= f.text_field :p_addictions, class: 'form-control' %>
+	  </div>
+
+	  <div class="col-md-8">
+	    <b>Obesidad / Sobrepeso</b>
+	    <%= f.text_field :p_obesity, class: 'form-control' %> 
+	  </div>
 	  
-	  <b>Hipercolesterolemia</b>
-	  <%= f.text_field :p_hypercholesterolemia, class: 'form-control' %>
+	  <div class="col-md-8">      
+	    <b>DM2</b>
+	    <%= f.text_field :p_dm2, class: 'form-control' %>
+	  </div>
 	  
+	  <div class="col-md-8">	  
+	    <b>HTA</b>
+	    <%= f.text_field :p_hta, class: 'form-control' %>
+	  </div>
+	  
+	  <div class="col-md-8">	  
+	    <b>ECV</b>
+	    <%= f.text_field :p_ecv, class: 'form-control' %>
+	  </div>
+	  
+	  <div class="col-md-8">	  
+	    <b>IAM</b>
+	    <%= f.text_field :p_iam, class: 'form-control' %>
+	  </div>
+	  
+	  <div class="col-md-8">
+	    <b>IRC</b>
+	    <%= f.text_field :p_irc, class: 'form-control' %>
+	  </div>	    
+	  
+	  <div class="col-md-8">	  
+	    <b>EVC</b>
+	    <%= f.text_field :p_evc, class: 'form-control' %>
+	  </div>
+	  
+	  <div class="col-md-8">	  
+	    <b>Cancer</b>
+	    <%= f.text_field :p_cancer, class: 'form-control' %>
+	  </div>	    
+	  
+	  <div class="col-md-8">	  
+	    <b>Hipercolesterolemia</b>
+	    <%= f.text_field :p_hypercholesterolemia, class: 'form-control' %>
+	  </div>
+
 	  <div class="spacer-5"></div>
-	  <b>ANT OBSTÉTRICOS (G, P, C, A)</b>
-	  <%= f.text_field :p_antobst, class: 'form-control' %>
-	  
 	  <div class="spacer-5"></div>
-	  <b>ANT GINECOLÓGICOS</b><br>
-	  <b>Menarca</b>
-	  <%= f.text_field :p_menarche, class: 'form-control' %>
-	  
-	  <b>Ritmo</b>
-	  <%= f.text_field :p_ritmo, class: 'form-control' %>
-	  
-	  <b>FUM</b>
-	  <%= f.text_field :p_fum, class: 'form-control' %>
-	  
-	  <b>Consumo de Hormonas</b>
-	  <%= f.text_field :p_hormones, class: 'form-control' %>	
-	  
-	  <div class="spacer-5"></div>
-	  <b>Fecha de Diagnostico de AR</b>
-	  <%= f.text_field :p_diagnosisdate, class: 'form-control' %>
 	  	  
-	  <b>Inicio de la Enfermedad</b>
-	  <%= f.text_field :p_disease_startdate, class: 'form-control' %>
+	  <div class="col-md-12">
+	  	<b>ANT OBSTÉTRICOS (G, P, C, A)</b>
+	    <%= f.text_field :p_antobst, class: 'form-control' %>
+	  </div>
+	  
+	  <div class="spacer-5"></div>
+	  <div class="spacer-5"></div>	  
+	  
+	  <div class="col-md-12"><b>ANT GINECOLÓGICOS</b></div>
+	  <div class="col-md-3">
+	    <b>Menarca</b>
+	    <%= f.text_field :p_menarche, class: 'form-control' %>
+	  </div>
+
+	  <div class="col-md-3">
+	    <b>Ritmo</b>
+	    <%= f.text_field :p_ritmo, class: 'form-control' %>
+	  </div>
+
+	  <div class="col-md-3">
+	    <b>FUM</b>
+	    <%= f.text_field :p_fum, class: 'form-control' %>
+	  </div>
+	  
+	  <div class="col-md-3">	  
+	    <b>Consumo de Hormonas</b>
+	    <%= f.text_field :p_hormones, class: 'form-control' %>	
+	  </div>
+
+	  <div class="spacer-5"></div>
+	  <div class="spacer-5"></div>
+	  	  
+	  <div class="col-md-6">
+	    <b>Fecha de Diagnostico de AR</b>
+	    <%= f.text_field :p_diagnosisdate, class: 'form-control' %>
+	  </div>
+	  	  
+	  <div class="col-md-6">	  	  
+	    <b>Inicio de la Enfermedad</b>
+	    <%= f.text_field :p_disease_startdate, class: 'form-control' %>
+	  </div>
       
       <div class="spacer-5"></div>
     </div>
@@ -197,8 +318,8 @@
       <div class="spacer-5"></div>
       
       <div class="row">
-      	<div class="col-md-offset-1 col-md-3 text-center"><h4>Nombre del Medicamento</h4></div>
-      	<div class="col-md-7 text-center"><h4>Dosis</h4></div>
+      	<div class="col-md-offset-1 col-md-3 text-center"><b>Nombre del Medicamento</b></div>
+      	<div class="col-md-7 text-center"><b>Dosis</b></div>
       </div>
       <div class="row">
       	<div class="col-md-offset-1 col-md-3"><%= f.text_field :meds1, class: 'form-control' %></div>
@@ -233,6 +354,7 @@
 	</div>
 
     </div>
+    <div class="spacer-5"></div>
     <%= f.submit "Guardar", class: "btn btn-primary" %>    
     <%= link_to "Atras", people_path, class: "btn btn-primary" %>
   <% end %>
