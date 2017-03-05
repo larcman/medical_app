@@ -1,0 +1,175 @@
+<div class="spacer-5"></div>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#tab0" aria-controls="tab0" role="tab" data-toggle="tab">General</a></li>
+  <li role="presentation"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Cardiovascular</a></li>
+  <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Seguimiento</a></li>
+</ul>
+
+<div class="form-horizontal">  
+  <%= form_for(@evaluation) do |f| %>
+    <div class="tab-content">
+
+	<!-- 1st Tab -->
+    <div role="tabpanel" class="tab-pane active" id="tab0">
+      <div class="spacer-5"></div>
+      
+        <div class="col-md-4">
+	      <b>Factor Reumatoide (FR)</b>
+	      <%= f.text_field :var_fr, class: 'form-control' %>
+	    </div>
+	    
+	    <div class="col-md-4">
+	      <b>Anticuerpo anit-peptido citrulinado (ACPA)</b>
+	      <%= f.text_field :var_acpa, class: 'form-control' %>
+	    </div>
+	    
+	    <div class="col-md-4">
+	      <b>Factor de Necrosis Tumoral alfa (TNF-a)</b>
+	      <%= f.text_field :var_tnfa, class: 'form-control' %>
+	    </div>
+	    
+	    <div class="col-md-4">	    
+	      <b>Interleucina 6 (IL-6)</b>
+	      <%= f.text_field :var_il6, class: 'form-control' %>
+	    </div>	    
+	    
+	    <div class="col-md-4">	    
+	      <b>Proteína C reactiva (PCR)</b>
+	      <%= f.text_field :var_pcr, class: 'form-control' %>
+	    </div>
+	    	    
+	    <div class="col-md-4">	    
+	      <b>Disease Activity Score 28 (DAS-28)</b>
+	      <%= f.text_field :var_das28, class: 'form-control' %>
+	    </div>	    
+	    
+	    <div class="col-md-4">	    
+	      <b>Velocidad de sedimentación globular (VSG)</b>
+	      <%= f.text_field :var_vsg, class: 'form-control' %>
+	    </div>	    
+	    
+	    <div class="col-md-4">	    
+	      <b>Health Assessment Questionnaire (HAQ)</b>
+	      <%= f.text_field :var_haq, class: 'form-control' %>
+	    </div>	      
+<!--
+	    <div class="col-md-4">	    
+	      <b>Velocida de onda de pulso central (VOP)</b>
+	      <%= f.text_field :var_vop, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-4">	    
+	      <b>Indice de Aumentación central (IAc)</b>
+	      <%= f.text_field :var_iac, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-4">	    
+	      <b>Indice Carotida (IC)</b>
+	      <%= f.text_field :var_ic, class: 'form-control' %>
+	    </div>	
+-->
+	    <div class="col-md-4">	
+	      <b>Tension Arterial (T/A)</b>
+	      <%= f.text_field :var_ta, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-4">	    
+	      <b>Frecuencia Cardiaca (FC)</b>
+	      <%= f.text_field :var_fc, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-4">	    
+	      <b>Frequencia Respiratoria (Fr)</b>
+	      <%= f.text_field :var_fresp, class: 'form-control' %>
+	    </div>	      
+	
+	    <div class="col-md-4">	
+	      <b>Temperatura (Temp)</b>
+	      <%= f.text_field :var_temp, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-4">	    
+	      <b>Lipidos (Lip)</b>
+	      <%= f.text_field :var_lip, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-4">	    
+	      <b>Colesterol Total (CT)</b>
+	      <%= f.text_field :var_ct, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-4">	    
+	      <b>Trigliceridos (TG)</b>
+	      <%= f.text_field :var_tg, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-4">	    
+	      <b>Liproteína de baja densidad (LDL)</b>
+	      <%= f.text_field :var_ldl, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-4">	    
+	      <b>Liproteína de muy baja densidad (VLDL)</b>
+	      <%= f.text_field :var_vldl, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-4">	    
+	      <b>Liproteína de alta densidad (HDL)</b>
+	      <%= f.text_field :var_hdl, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-4">	    
+	      <b>Glucosa (Glu)</b>
+	      <%= f.text_field :var_glu, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-2">	    
+	      <b>Peso (Cm)</b>
+	      <%= f.text_field :var_peso, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-2">	    
+	      <b>Talla (Kg)</b>
+	      <%= f.text_field :var_talla, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-4">	    
+	      <b>Indice de masa corporal (IMC)</b>
+	      <%= f.text_field :var_imc, class: 'form-control' %>
+	    </div>	      
+	    
+	    <div class="col-md-4">	    
+	      <b>Circunferencia de cintura (CC)</b>
+	      <%= f.text_field :var_cc, class: 'form-control' %>
+	    </div>	      
+      
+      <div class="spacer-5"></div>		
+	</div>
+	
+	<!-- 2nd Tab -->
+	<div role="tabpanel" class="tab-pane" id="tab1">
+      <div class="spacer-5"></div>
+      
+      <div class="spacer-5"></div>
+	</div>
+	
+	<!-- 3rd Tab -->
+	<div role="tabpanel" class="tab-pane" id="tab2">
+      <div class="spacer-5"></div>
+      
+     <div class="spacer-5"></div>
+    </div>
+    </div>
+    <div class="spacer-5"></div>
+    
+    <%= f.submit "Guardar", class: "btn btn-primary" %> 
+    <% if @evaluation.appointment_id %>   
+      <%= link_to "Atras", edit_appointment_path(@evaluation.appointment_id), class: "btn btn-primary" %>
+    <% else %>
+      <%= f.hidden_field :appointment_id, :value => @appointment.id %>
+      <%= link_to "Atras", edit_appointment_path(@appointment.id), class: "btn btn-primary" %>
+    <% end %>
+
+  <% end %>
+</div>
