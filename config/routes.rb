@@ -45,6 +45,8 @@ Rails.application.routes.draw do
   delete 'patients/:id' => 'patients#destroy'
   resources :patients
   
+  get 'appointments' => 'appointments#index', as: 'appointments'
+  get 'appointments/index'  
   get 'appointments/new' => 'appointments#new', as: 'new_appointment'
   get 'appointments/:id' => 'appointments#show', as: 'appointment'  
   get 'appointments/:id/edit' => 'appointments#edit'

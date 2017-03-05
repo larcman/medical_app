@@ -28,7 +28,7 @@
 	          
 	          <% if @research %>
 	            <!--<li><a href="#">Pacientes</a></li>-->
-                <!--<li><a href="#">Visitas</a></li>-->
+                <li><%= link_to "Visitas", appointments_path(:research => @research.id) %>
 	          <% else %>
 	            <li><%= link_to "Candidatos", people_path %>
 	            <!--<li><%= link_to "Protocolos", researches_path %></li>-->

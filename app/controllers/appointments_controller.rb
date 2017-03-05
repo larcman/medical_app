@@ -24,6 +24,13 @@ class AppointmentsController < ApplicationController
     redirect_to controller: 'patients', action: 'edit', id: @patient.id
   end
   
+  def index
+    @research = Research.find(params[:research])
+    
+    # returns all appts created
+    @appointments = Appointment.where.not(id: '0').order('day, patient_id')
+  end  
+  
   def show
     # redirect to edit
     @appointment = Appointment.find(params[:id])
