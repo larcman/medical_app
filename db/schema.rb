@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224043545) do
+ActiveRecord::Schema.define(version: 20170313031613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,12 +61,24 @@ ActiveRecord::Schema.define(version: 20170224043545) do
     t.string   "var_talla"
     t.string   "var_imc"
     t.string   "var_cc"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "appointment_id", null: false
-    t.string   "center_id",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "appointment_id",     null: false
+    t.string   "center_id",          null: false
     t.string   "var_fresp"
-    t.string   "research_id",    null: false
+    t.string   "research_id",        null: false
+    t.string   "car_vopcf"
+    t.string   "car_aix"
+    t.string   "car_presioncentral"
+    t.string   "car_cpp"
+    t.string   "car_sevr"
+    t.string   "car_ap"
+    t.string   "car_ppas"
+    t.string   "car_ppad"
+    t.string   "car_percentil"
+    t.string   "car_carfem"
+    t.string   "car_caris"
+    t.string   "car_isfem"
   end
 
   create_table "patients", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
