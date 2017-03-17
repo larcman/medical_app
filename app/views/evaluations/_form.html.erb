@@ -140,6 +140,119 @@
 	<!-- 2nd Tab -->
 	<div role="tabpanel" class="tab-pane" id="tab1">
       <div class="spacer-5"></div>
+
+      <div class="col-md-12">
+	  	<h4> ARTLAB </h4>
+	  </div> 
+	  
+      <div class="row">
+      	<div class="col-md-offset-3 col-md-2 text-center"><b>Izquierda</b></div>
+      	<div class="col-md-2 text-center"><b>Derecha</b></div>      	
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>QIMT (&#181;m)</b></div>
+      	<div class="col-md-2"><%= f.text_field :car_artlab_qimt_izq, class: 'form-control' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_artlab_qimt_der, class: 'form-control' %></div>     	      	      	
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>Diámetro</b></div>
+      	<div class="col-md-2"><%= f.text_field :car_artlab_diametro1_izq, class: 'form-control' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_artlab_diametro1_der, class: 'form-control' %></div>     	      	      	
+      </div>
+                  
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>QIMT Max (&#181;m)</b></div>
+      	<div class="col-md-2"><%= f.text_field :car_artlab_qimtmax_izq, class: 'form-control' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_artlab_qimtmax_der, class: 'form-control' %></div>     	      	      	
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>Distensión (&#181;m)</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_distension_der, class: 'form-control' %></div>     	      	      	
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>Diámetro (mm)</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_diametro2_der, class: 'form-control' %></div>     	      	      	
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>Psis braquial (mmHg)</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_psisbraquial_der, class: 'form-control' %></div>     	      	      	
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>Pdias braquial (mmHg)</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_pdiasbraquial_der, class: 'form-control' %></div>     	      	      	
+      </div>  
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>Psis local (mmHg)</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_psislocal_der, class: 'form-control' %></div>     	      	      	
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>Pdias local (mmHg)</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_pdiaslocal_der, class: 'form-control' %></div>     	      	      	
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>VOP m/s (carotídea)</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_vop_der, class: 'form-control' %></div>     	      	      	
+      </div>  
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>DC</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_dc_der, class: 'form-control' %></div>     	      	      	
+      </div> 
+                        
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>CC</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_cc_der, class: 'form-control' %></div>     	      	      	
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>Alfa</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_alfa_der, class: 'form-control' %></div>     	      	      	
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>Beta</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_beta_der, class: 'form-control' %></div>     	      	      	
+      </div>   
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>ICP (ms)</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_icp_der, class: 'form-control' %></div>     	      	      	
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>ED (ms)</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_ed_der, class: 'form-control' %></div>     	      	      	
+      </div>      
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>P(T1) mmHg</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_p_der, class: 'form-control' %></div>     	      	      	
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>AP (mmHg)</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_ap_der, class: 'form-control' %></div>     	      	      	
+      </div>      
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>Aix %</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_aix_der, class: 'form-control' %></div>     	      	      	
+      </div>      
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>Presencia Placa (Si/No)</b></div>
+      	<div class="col-md-2 text-center"><%= f.check_box :car_artlab_presenciaplaca_izq, class: 'checkbox' %></div>
+      	<div class="col-md-2 text-center"><%= f.check_box :car_artlab_presenciaplaca_der, class: 'checkbox' %></div>      	      	      	
+      </div>      
       
       <div class="spacer-5"></div>      
       <div class="spacer-5"></div>

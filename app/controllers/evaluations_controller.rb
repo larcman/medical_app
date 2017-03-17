@@ -70,8 +70,17 @@ class EvaluationsController < ApplicationController
     :var_vsg, :var_haq, :var_vop, :var_iac, :var_ic, :var_ta, :var_fc, :var_fresp, :var_temp, :var_lip,
     :var_ct, :var_tg, :var_ldl, :var_vldl, :var_hdl, :var_glu, :var_peso, :var_talla, :var_imc, :var_cc,
     # Cardiovascular
+    ## Artlab
+    :car_artlab_qimt_izq, :car_artlab_qimt_der, :car_artlab_diametro1_izq, :car_artlab_diametro1_der,
+    :car_artlab_qimtmax_izq, :car_artlab_qimtmax_der, :car_artlab_distension_der, :car_artlab_diametro2_der,
+    :car_artlab_psisbraquial_der, :car_artlab_pdiasbraquial_der, :car_artlab_psislocal_der, :car_artlab_pdiaslocal_der,
+    :car_artlab_vop_der, :car_artlab_dc_der, :car_artlab_cc_der, :car_artlab_alfa_der, :car_artlab_beta_der,
+    :car_artlab_icp_der, :car_artlab_ed_der, :car_artlab_p_der, :car_artlab_ap_der, :car_artlab_aix_der,
+    :car_artlab_presenciaplaca_izq, :car_artlab_presenciaplaca_der,
+    ## pOpmtre
     :car_pwv1a, :car_pwv2a, :car_pwv3a, :car_pwv4a,
     :car_tt1a, :car_tt2a, :car_tt3a, :car_tt4a,
+    ## PulsePen
     :car_popscore1a, :car_popscore2a, :car_popscore3a, :car_popscore4a,
     :car_vopcf, :car_ap, :car_carfem, :car_aix, :car_ppas, :car_caris, :car_presioncentral, 
     :car_ppad, :car_isfem, :car_cpp, :car_percentil, :car_sevr

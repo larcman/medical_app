@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317031303) do
+ActiveRecord::Schema.define(version: 20170317032627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,12 +61,12 @@ ActiveRecord::Schema.define(version: 20170317031303) do
     t.string   "var_talla"
     t.string   "var_imc"
     t.string   "var_cc"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "appointment_id",     null: false
-    t.string   "center_id",          null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.string   "appointment_id",                                null: false
+    t.string   "center_id",                                     null: false
     t.string   "var_fresp"
-    t.string   "research_id",        null: false
+    t.string   "research_id",                                   null: false
     t.string   "car_vopcf"
     t.string   "car_aix"
     t.string   "car_presioncentral"
@@ -92,6 +92,30 @@ ActiveRecord::Schema.define(version: 20170317031303) do
     t.string   "car_popscore2a"
     t.string   "car_popscore3a"
     t.string   "car_popscore4a"
+    t.string   "car_artlab_qimt_izq"
+    t.string   "car_artlab_qimt_der"
+    t.string   "car_artlab_diametro1_izq"
+    t.string   "car_artlab_diametro1_der"
+    t.string   "car_artlab_qimtmax_izq"
+    t.string   "car_artlab_qimtmax_der"
+    t.string   "car_artlab_distension_der"
+    t.string   "car_artlab_diametro2_der"
+    t.string   "car_artlab_psisbraquial_der"
+    t.string   "car_artlab_pdiasbraquial_der"
+    t.string   "car_artlab_psislocal_der"
+    t.string   "car_artlab_pdiaslocal_der"
+    t.string   "car_artlab_vop_der"
+    t.string   "car_artlab_dc_der"
+    t.string   "car_artlab_cc_der"
+    t.string   "car_artlab_alfa_der"
+    t.string   "car_artlab_beta_der"
+    t.string   "car_artlab_icp_der"
+    t.string   "car_artlab_ed_der"
+    t.string   "car_artlab_p_der"
+    t.string   "car_artlab_ap_der"
+    t.string   "car_artlab_aix_der"
+    t.boolean  "car_artlab_presenciaplaca_izq", default: false
+    t.boolean  "car_artlab_presenciaplaca_der", default: false
   end
 
   create_table "patients", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
