@@ -15,7 +15,7 @@ class ResearchesController < ApplicationController
     
     # Stuff for the Quick creation form
     @patient = Patient.new
-    @people = Person.where("center_id = ?", @center.id).order(firstname: :asc);
+    @people = Person.where("id NOT IN (SELECT person_id FROM patients WHERE research_id = ?)", @research.id).order(firstname: :asc);
   end
 
   def edit
