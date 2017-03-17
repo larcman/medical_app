@@ -66,12 +66,16 @@ class EvaluationsController < ApplicationController
   def evaluation_params
     params.require(:evaluation).permit(
     # Variables (General)
-    :var_fr, :var_acpa, :var_tnfa, :var_il6, :var_pcr, :var_das28, 
+    :var_fr, :var_acpa, :var_tnfa, :var_il1, :var_il6, :var_pcr, :var_das28, 
     :var_vsg, :var_haq, :var_vop, :var_iac, :var_ic, :var_ta, :var_fc, :var_fresp, :var_temp, :var_lip,
     :var_ct, :var_tg, :var_ldl, :var_vldl, :var_hdl, :var_glu, :var_peso, :var_talla, :var_imc, :var_cc,
     # Cardiovascular
+    :car_pwv1a, :car_pwv2a, :car_pwv3a, :car_pwv4a,
+    :car_tt1a, :car_tt2a, :car_tt3a, :car_tt4a,
+    :car_popscore1a, :car_popscore2a, :car_popscore3a, :car_popscore4a,
     :car_vopcf, :car_ap, :car_carfem, :car_aix, :car_ppas, :car_caris, :car_presioncentral, 
-    :car_ppad, :car_isfem, :car_cpp, :car_percentil, :car_sevr)
+    :car_ppad, :car_isfem, :car_cpp, :car_percentil, :car_sevr
+    )
   end  
   
 end

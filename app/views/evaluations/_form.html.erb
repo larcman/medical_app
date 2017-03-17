@@ -30,6 +30,11 @@
 	    </div>
 	    
 	    <div class="col-md-4">	    
+	      <b>Interleucina 1 (IL-1)</b>
+	      <%= f.text_field :var_il1, class: 'form-control' %>
+	    </div>	    
+	    
+	    <div class="col-md-4">	    
 	      <b>Interleucina 6 (IL-6)</b>
 	      <%= f.text_field :var_il6, class: 'form-control' %>
 	    </div>	    
@@ -53,22 +58,7 @@
 	      <b>Health Assessment Questionnaire (HAQ)</b>
 	      <%= f.text_field :var_haq, class: 'form-control' %>
 	    </div>	      
-<!--
-	    <div class="col-md-4">	    
-	      <b>Velocida de onda de pulso central (VOP)</b>
-	      <%= f.text_field :var_vop, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-4">	    
-	      <b>Indice de Aumentación central (IAc)</b>
-	      <%= f.text_field :var_iac, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-4">	    
-	      <b>Indice Carotida (IC)</b>
-	      <%= f.text_field :var_ic, class: 'form-control' %>
-	    </div>	
--->
+
 	    <div class="col-md-4">	
 	      <b>Tension Arterial (T/A)</b>
 	      <%= f.text_field :var_ta, class: 'form-control' %>
@@ -166,26 +156,26 @@
       
       <div class="row">
       	<div class="col-md-offset-1 col-md-2"><b>PWV</b></div>
-      	<div class="col-md-2"><%= f.text_field :car_vopcf, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_vopcf, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_vopcf, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_vopcf, class: 'form-control' %></div>      	      	      	
+      	<div class="col-md-2"><%= f.text_field :car_pwv1a, class: 'form-control' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_pwv2a, class: 'form-control' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_pwv3a, class: 'form-control' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_pwv4a, class: 'form-control' %></div>      	      	      	
       </div>
       
       <div class="row">
       	<div class="col-md-offset-1 col-md-2"><b>TT</b></div>
-      	<div class="col-md-2"><%= f.text_field :car_vopcf, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_vopcf, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_vopcf, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_vopcf, class: 'form-control' %></div>      	      	      	
+      	<div class="col-md-2"><%= f.text_field :car_tt1a, class: 'form-control' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_tt2a, class: 'form-control' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_tt3a, class: 'form-control' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_tt4a, class: 'form-control' %></div>      	      	      	
       </div>
       
       <div class="row">
       	<div class="col-md-offset-1 col-md-2"><b>Popscore</b></div>
-      	<div class="col-md-2"><%= f.text_field :car_vopcf, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_vopcf, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_vopcf, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_vopcf, class: 'form-control' %></div>      	      	      	
+      	<div class="col-md-2"><%= f.text_field :car_popscore1a, class: 'form-control' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_popscore2a, class: 'form-control' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_popscore3a, class: 'form-control' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_popscore4a, class: 'form-control' %></div>      	      	      	
       </div>            
       
       <div class="spacer-5"></div>      

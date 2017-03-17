@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170313031613) do
+ActiveRecord::Schema.define(version: 20170317031303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,19 @@ ActiveRecord::Schema.define(version: 20170313031613) do
     t.string   "car_carfem"
     t.string   "car_caris"
     t.string   "car_isfem"
+    t.string   "var_il1"
+    t.string   "car_pwv1a"
+    t.string   "car_pwv2a"
+    t.string   "car_pwv3a"
+    t.string   "car_pwv4a"
+    t.string   "car_tt1a"
+    t.string   "car_tt2a"
+    t.string   "car_tt3a"
+    t.string   "car_tt4a"
+    t.string   "car_popscore1a"
+    t.string   "car_popscore2a"
+    t.string   "car_popscore3a"
+    t.string   "car_popscore4a"
   end
 
   create_table "patients", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
