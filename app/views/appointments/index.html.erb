@@ -3,48 +3,58 @@
 <div class="spacer-5"></div>
 
 <div class="row header">
-  <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2"> Codigo <%= @research.code %> </div>	
-  <div class="col-xs-.4 col-sm-3 col-md-3 col-lg-3"> Paciente </div>
-  <div class="col-xs-.3 col-sm-2 col-md-1 col-lg-1"> Dia </div>
-  <div class="col-xs-.3 col-sm-2 col-md-1 col-lg-1"> Hora </div>
-  <div class="col-xs-.2 col-sm-1 col-md-2 col-lg-2"> Status </div>
-  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
-  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-md-1"> Codigo <%= @research.code %> </div>	
+  <div class="col-md-3"> Paciente </div>
+  <div class="col-md-1"> Telefono </div>
+  <div class="col-md-1"> Celular </div>    
+  <div class="col-md-1"> Dia </div>
+  <div class="col-md-1"> Hora </div>
+  <div class="col-md-2"> Status </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
 </div>
 
 <% if @appointments.length > 0 %>
 
 <% @appointments.each_with_index do |appt, idx| %>
+  <% person = appt.patient.person %>
   <% if (idx % 2 == 0) %>
     <div class="row content-even">
-	  <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2 row-center"><%= appt.patient.code %></div>    	
-	  <div class="col-xs-.4 col-sm-3 col-md-3 col-lg-3"><%= appt.patient.person.firstname + ' ' + appt.patient.person.lastname %></div>
-	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-1 row-center"><%= appt.day.strftime("%d/%m/%Y") %></div>
-	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-1 row-center"><%= appt.starttime.strftime("%I:%M %p") %></div>
-	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-2 row-center"><%= appt.status %></div>
-	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Editar", edit_appointment_path(appt.id), { method: "put" } %></div>
-	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", appt, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar esta visita?" } %></div>
+	  <div class="col-md-1 row-center"><%= appt.patient.code %></div>    	
+	  <div class="col-md-3"><%= person.firstname + ' ' + person.lastname %></div>
+	  <div class="col-md-1 row-center"><%= person.phone %></div>
+	  <div class="col-md-1 row-center"><%= person.cellphone %></div>	  
+	  <div class="col-md-1 row-center"><%= appt.day.strftime("%d/%m/%Y") %></div>
+	  <div class="col-md-1 row-center"><%= appt.starttime.strftime("%I:%M %p") %></div>
+	  <div class="col-md-2 row-center"><%= appt.status %></div>
+	  <div class="col-md-1 row-center"><%= link_to "Editar", edit_appointment_path(appt.id), { method: "put" } %></div>
+	  <div class="col-md-1 row-center"><%= link_to "Eliminar", appt, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar esta visita?" } %></div>
 	</div>
   <% else %>
     <div class="row content-odd">
-	  <div class="col-xs-.2 col-sm-2 col-md-2 col-lg-2 row-center"><%= appt.patient.code %></div>    	
-	  <div class="col-xs-.4 col-sm-3 col-md-3 col-lg-3"><%= appt.patient.person.firstname + ' ' + appt.patient.person.lastname %></div>
-	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-1 row-center"><%= appt.day.strftime("%d/%m/%Y") %></div>
-	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-1 row-center"><%= appt.starttime.strftime("%I:%M %p") %></div>
-	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-2 row-center"><%= appt.status %></div>
-	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Editar", edit_appointment_path(appt.id), { method: "put" } %></div>
-	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", appt, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar esta visita?" } %></div>
+	  <div class="col-md-1 row-center"><%= appt.patient.code %></div>    	
+	  <div class="col-md-3"><%= person.firstname + ' ' + person.lastname %></div>
+	  <div class="col-md-1 row-center"><%= person.phone %></div>
+	  <div class="col-md-1 row-center"><%= person.cellphone %></div>	  
+	  <div class="col-md-1 row-center"><%= appt.day.strftime("%d/%m/%Y") %></div>
+	  <div class="col-md-1 row-center"><%= appt.starttime.strftime("%I:%M %p") %></div>
+	  <div class="col-md-2 row-center"><%= appt.status %></div>
+	  <div class="col-md-1 row-center"><%= link_to "Editar", edit_appointment_path(appt.id), { method: "put" } %></div>
+	  <div class="col-md-1 row-center"><%= link_to "Eliminar", appt, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar esta visita?" } %></div>
 	</div>
   <% end %>
 <% end %>
 
 <div class="row footer">
-  <div class="col-xs-.4 col-sm-3 col-md-3 col-lg-3"></div>
-  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-1"></div>
-  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-1"></div>
-  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
-  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
-  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
+  <div class="col-md-1"></div>	
+  <div class="col-md-3"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>    
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-2"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
 </div>
 
 <% else %>
