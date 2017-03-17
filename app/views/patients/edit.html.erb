@@ -11,7 +11,7 @@
     <%= f.text_field :code, class: 'form-control' %>
     
     <b>Candidato&nbsp;</b> <%= link_to "(Editar)", edit_person_path(@patient.person.id) %>
-    <%= f.collection_select :person_id, @people, :id, :firstname, {:include_blank => false}, {:class => 'form-control'} %>
+    <%= f.collection_select :person_id, @people, :id, :identifier, {:include_blank => false}, {:class => 'form-control'} %>
 
     <div class="spacer-5"></div>
     
