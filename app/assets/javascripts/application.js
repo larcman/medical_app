@@ -35,7 +35,10 @@ function filterTable (field, table, colnum) {
   }
 };
 
+
 $(document).ready(function () {
+
+/* FIXME: It does not work all the time	
   $('#date_picker').datepicker({
     format: 'dd/mm/yyyy',
     todayHighlight: true,
@@ -45,5 +48,8 @@ $(document).ready(function () {
     todayBtn: true,
     keyboardNavigation: true,
     language: 'es'
-  });  
+  });
+*/
+
 });
+
