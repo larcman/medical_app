@@ -16,6 +16,16 @@
  */
 
 
+/* Bootstrap icons */
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../assets/glyphicons-halflings-regular.eot');
+  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('../assets/glyphicons-halflings-regular.woff') format('woff'),
+  url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
 /* General Theme */
 body {
   padding-top: 60px;
@@ -88,6 +98,17 @@ body {
 
 
 /* Grid */
+.table-header {
+  background-color: #337ab7;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.table-hover tbody tr:hover td {
+  background-color: Gainsboro;
+}
+
 .row > div {
   margin-top: 10px;
   margin-bottom: 10px;
