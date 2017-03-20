@@ -2,8 +2,13 @@
 
 <div class="spacer-5"></div>
 
-<div class="table-responsive">
-  <table class="table table-hover table-condensed table-bordered table-striped">
+<div class="form-group col-md-3">
+  <label class="control-label">Buscar por Fecha:</label>
+  <input class="form-control" id="date_picker" placeholder="dd/mm/aaaa" type="text" onchange="filterTable('date_picker', 'appts_table', 4)"/>
+</div>
+
+<div class="table-responsive col-md-12">
+  <table class="table table-hover table-condensed table-bordered table-striped" id="appts_table">
   	<thead>
     <tr class="table-header">
 	  <th class="row-center">Codigo <%= @research.code %></th>

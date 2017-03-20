@@ -15,3 +15,35 @@
 //= require turbolinks
 //= require bootstrap.min
 //= require_tree .
+
+function filterTable (field, table, colnum) {
+  var input, filter, tab, tr, td, i;
+  input = document.getElementById(field);
+  filter = input.value.toUpperCase();
+  tab = document.getElementById(table);
+  tr = tab.getElementsByTagName("tr");
+
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[colnum];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+};
+
+$(document).ready(function () {
+  $('#date_picker').datepicker({
+    format: 'dd/mm/yyyy',
+    todayHighlight: true,
+    autoclose: true,
+    orientation: 'top',
+    clearBtn: true,
+    todayBtn: true,
+    keyboardNavigation: true,
+    language: 'es'
+  });  
+});
