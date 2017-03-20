@@ -24,7 +24,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
-  config.assets.precompile += %w( jquery.dataTables.min.js jquery-ui-1.8.21.custom.min.js jquery-ui-1.8.21.custom.css bootstrap-datepicker.js fullcalendar.js)
+  config.assets.precompile =  ['*.js', '*.css', '*.css.erb']
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
