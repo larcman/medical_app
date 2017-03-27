@@ -3,7 +3,7 @@
 <div class="spacer-5"></div>
 
 <div class="form-group col-md-3">
-  <label class="control-label">Buscar por Fecha:</label>
+  <label class="control-label">Filtrar por Fecha:</label>
   <input class="form-control" id="date_picker" placeholder="dd/mm/aaaa" type="text" onkeyup="filterTable('date_picker', 'appts_table', 4)"/>
 </div>
 
@@ -35,7 +35,7 @@
 	  <td class="row-center"><%= appt.status %></td>
 	  <td class="row-center">
 	  	<%= link_to edit_appointment_path(appt.id), title: 'Ver Detalles', 'data-toggle' => 'tooltip', 'data-placement' => 'right' do %>
-	  	  <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+	  	  <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 	  	<% end %>
 	    <%= link_to appt, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar esta visita?" }, title: 'Eliminar', 'data-toggle' => 'tooltip', 'data-placement' => 'right' do %>
 	  	  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
