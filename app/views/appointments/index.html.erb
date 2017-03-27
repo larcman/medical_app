@@ -18,7 +18,7 @@
 	  <th class="row-center">Fecha</th>
 	  <th class="row-center">Hora</th>
 	  <th class="row-center">Status</th>
-	  <th></th>
+	  <th class="col-md-1"></th>
 	</tr>
 	</thead>
 
@@ -34,6 +34,13 @@
 	  <td class="row-center"><%= appt.starttime.strftime("%I:%M %p") %></td>
 	  <td class="row-center"><%= appt.status %></td>
 	  <td class="row-center">
+  		<% if appt.evaluation %>
+	  	  <%= link_to edit_evaluation_path(appt.evaluation.id), title: 'Ver Evaluación', 'data-toggle' => 'tooltip', 'data-placement' => 'right' do %>
+	  	    <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+	  	  <% end %>
+	  	<% else %>
+	  	  <span class="glyphicon glyphicon-blank" aria-hidden="true"></span>
+	  	<% end %>
 	  	<%= link_to edit_appointment_path(appt.id), title: 'Ver Detalles', 'data-toggle' => 'tooltip', 'data-placement' => 'right' do %>
 	  	  <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 	  	<% end %>
