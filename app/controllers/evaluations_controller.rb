@@ -83,7 +83,9 @@ class EvaluationsController < ApplicationController
     ## PulsePen
     :car_popscore1a, :car_popscore2a, :car_popscore3a, :car_popscore4a,
     :car_vopcf, :car_ap, :car_carfem, :car_aix, :car_ppas, :car_caris, :car_presioncentral, 
-    :car_ppad, :car_isfem, :car_cpp, :car_percentil, :car_sevr
+    :car_ppad, :car_isfem, :car_cpp, :car_percentil, :car_sevr,
+    ## Cavi
+    :car_cavi_der, :car_cavi_izq, :car_abi_der, :car_abi_izq
     )
   end  
   
