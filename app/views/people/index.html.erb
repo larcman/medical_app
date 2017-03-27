@@ -2,63 +2,50 @@
 
 <div class="spacer-5"></div>
 
-<div class="row header">
-  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"> Codigo IIRSME </div>
-  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Nombre(s) </div>
-  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Apellidos </div>
-  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"> Edad </div>
-  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"> Sexo </div>
-  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"> Telefono </div>
-  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
-  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
+<div class="form-group col-md-3">
+  <label class="control-label">Filtrar por Codigo:</label>
+  <input class="form-control" id="person_code_picker" type="text" onkeyup="filterTable('person_code_picker', 'people_table', 0)"/>
 </div>
 
-
-<% if @people.length > 0 %>
-
-<% @people.each_with_index do |person, idx| %>
-  <% if (idx % 2 == 0) %>
-    <div class="row content-even">
-	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= person.code %></div>
-	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= person.firstname %></div>
-	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2 "><%= person.lastname %></div>
-	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= person.age %></div>
-	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= person.gender %></div>
-	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2 row-center"><%= person.phone %></div>
-	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Editar", edit_person_path(person.id), { method: "put" } %></div>
-	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", person, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar este candidato?" } %></div>
-	</div>
-  <% else %>
-	<div class="row content-odd">
-	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= person.code %></div>
-	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"><%= person.firstname %></div>
-	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2 "><%= person.lastname %></div>
-	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= person.age %></div>
-	  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1 row-center"><%= person.gender %></div>
-	  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2 row-center"><%= person.phone %></div>
-	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Editar", edit_person_path(person.id), { method: "put" } %></div>
-	  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1 row-center"><%= link_to "Eliminar", person, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar este candidato?" } %></div>
-	</div>
-  <% end %>
-<% end %>
-
-<div class="row footer">
-  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
-  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"></div>
-  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"></div>
-  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
-  <div class="col-xs-.2 col-sm-1 col-md-1 col-lg-1"></div>
-  <div class="col-xs-.3 col-sm-2 col-md-2 col-lg-2"></div>
-  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
-  <div class="col-xs-.1 col-sm-1 col-md-1 col-lg-1"></div>
+<div class="col-md-offset-7 col-md-2">
+  <%= link_to "Nuevo Candidato", new_person_path, { class: "btn btn-primary"} %>
 </div>
 
-<% else %>
-
-  <div class="col-lg-12 row-center"><h4>No hay candidatos registrados aún...</h4></div>
-  
-<% end %>
- 
-<div class="spacer-5"></div>
-
-<%= link_to "Nuevo Candidato", new_person_path, { class: "btn btn-primary"} %>
+<div class="table-responsive col-md-12">
+  <table class="table table-hover table-condensed table-bordered table-striped" id="people_table">
+  	<thead>
+    <tr class="table-header">
+	  <th class="row-center">Codigo IIRSME</th>
+	  <th class="row-center">Nombre(s)</th>
+	  <th class="row-center">Apellidos</th>
+	  <th class="row-center">Edad</th>
+	  <th class="row-center">Sexo</th>
+	  <th class="row-center">Telefono</th>
+	  <th class="row-center">Celular</th>
+	  <th></th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<% @people.each_with_index do |person, idx| %>
+	<tr>
+      <td class="row-center"><%= person.code %></td>
+	  <td><%= person.firstname %></td>
+	  <td><%= person.lastname %></td>
+	  <td class="row-center"><%= person.age %></td>
+	  <td class="row-center"><%= person.gender %></td>	  	  	  
+	  <td class="row-center"><%= person.phone %></td>
+	  <td class="row-center"><%= person.cellphone %></td>
+	  <td class="row-center">
+	  	<%= link_to edit_person_path(person.id), title: 'Ver Detalles', 'data-toggle' => 'tooltip', 'data-placement' => 'right' do %>
+	  	  <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+	  	<% end %>
+	    <%= link_to person, method: :delete, data: { confirm: "¿Estas seguro que quieres eliminar este candidato?" }, title: 'Eliminar', 'data-toggle' => 'tooltip', 'data-placement' => 'right' do %>
+	  	  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+	  	<% end %>
+	  </td>
+	</tr>
+	<% end %>
+	</tbody>
+  </table>
+</div>	
