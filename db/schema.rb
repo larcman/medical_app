@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327162536) do
+ActiveRecord::Schema.define(version: 20170404050815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,6 +120,22 @@ ActiveRecord::Schema.define(version: 20170327162536) do
     t.string   "car_cavi_izq"
     t.string   "car_abi_der"
     t.string   "car_abi_izq"
+    t.string   "seg_peso"
+    t.string   "seg_talla"
+    t.string   "seg_imc"
+    t.string   "seg_body_fat"
+    t.string   "seg_abdominal_girth"
+    t.string   "seg_fc"
+    t.string   "seg_fr"
+    t.string   "seg_ta1"
+    t.string   "seg_ta2"
+    t.string   "seg_waist_circumference"
+    t.date     "seg_firstdose_date"
+    t.date     "seg_lastdose_date"
+    t.boolean  "seg_missed_dose",               default: false
+    t.string   "seg_missed_details"
+    t.string   "seg_medicament_count"
+    t.text     "seg_event_description"
   end
 
   create_table "patients", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|

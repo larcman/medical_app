@@ -69,6 +69,7 @@ class EvaluationsController < ApplicationController
     :var_fr, :var_acpa, :var_tnfa, :var_il1, :var_il6, :var_pcr, :var_das28, 
     :var_vsg, :var_haq, :var_vop, :var_iac, :var_ic, :var_ta, :var_fc, :var_fresp, :var_temp, :var_lip,
     :var_ct, :var_tg, :var_ldl, :var_vldl, :var_hdl, :var_glu, :var_peso, :var_talla, :var_imc, :var_cc,
+    
     # Cardiovascular
     ## Artlab
     :car_artlab_qimt_izq, :car_artlab_qimt_der, :car_artlab_diametro1_izq, :car_artlab_diametro1_der,
@@ -85,7 +86,12 @@ class EvaluationsController < ApplicationController
     :car_vopcf, :car_ap, :car_carfem, :car_aix, :car_ppas, :car_caris, :car_presioncentral, 
     :car_ppad, :car_isfem, :car_cpp, :car_percentil, :car_sevr,
     ## Cavi
-    :car_cavi_der, :car_cavi_izq, :car_abi_der, :car_abi_izq
+    :car_cavi_der, :car_cavi_izq, :car_abi_der, :car_abi_izq,
+    
+    # Seguimiento
+    :seg_peso, :seg_talla, :seg_imc, :seg_body_fat, :seg_abdominal_girth, :seg_fc, :seg_fr,
+    :seg_ta1, :seg_ta2, :seg_waist_circumference, :seg_firstdose_date, :seg_lastdose_date,
+    :seg_missed_dose, :seg_missed_details, :seg_medicament_count, :seg_event_description
     )
   end  
   

@@ -390,6 +390,115 @@
 	<div role="tabpanel" class="tab-pane" id="tab2">
       <div class="spacer-5"></div>
       
+      <div class="col-md-offset-5 col-md-7">
+	  	<h4> Datos Clínicos </h4>
+	  </div>  
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2 text-right"><b>Peso (Kg)</b></div>
+        <div class="col-md-2">
+	      <%= f.text_field :seg_peso, class: 'form-control' %>
+	    </div>
+	    
+	    <div class="col-md-offset-1 col-md-2 text-right"><b>FC (lpm)</b></div>
+        <div class="col-md-2">
+	      <%= f.text_field :seg_fc, class: 'form-control' %>
+	    </div>
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2 text-right"><b>Talla (m)</b></div>
+        <div class="col-md-2">
+	      <%= f.text_field :seg_talla, class: 'form-control' %>
+	    </div>
+	    
+	    <div class="col-md-offset-1 col-md-2 text-right"><b>FR (rpm)</b></div>
+        <div class="col-md-2">
+	      <%= f.text_field :seg_fr, class: 'form-control' %>
+	    </div>
+      </div> 
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2 text-right"><b>IMC (Kg/m2)</b></div>
+        <div class="col-md-2">
+	      <%= f.text_field :seg_imc, class: 'form-control' %>
+	    </div>
+	    
+	    <div class="col-md-offset-1 col-md-2 text-right"><b>TA (mmHg)</b></div>
+        <div class="col-md-1">
+	      <%= f.text_field :seg_ta1, class: 'form-control' %>
+	    </div>
+	    <div class="col-md-1 text-left">
+	      <%= f.text_field :seg_ta2, class: 'form-control' %>
+	    </div>
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2 text-right"><b>Grasa Corporal (%)</b></div>
+        <div class="col-md-2">
+	      <%= f.text_field :seg_body_fat, class: 'form-control' %>
+	    </div>
+	    
+	    <div class="col-md-offset-1 col-md-2 text-right"><b>Circunferencia &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cintura (cm)</b></div>
+        <div class="col-md-2">
+	      <%= f.text_field :seg_waist_circumference, class: 'form-control' %>
+	    </div>
+      </div> 
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2 text-right"><b>Circunferencia abdominal (cm)</b></div>
+        <div class="col-md-2">
+	      <%= f.text_field :seg_abdominal_girth, class: 'form-control' %>
+	    </div>
+      </div>       
+      
+      <div class="spacer-5"></div>
+      
+      <div class="row">
+      	<div class="col-md-offset-2 col-md-3 text-center"><h4> Apego al tratamiento </h4></div>
+	  	<div class="col-md-offset-2 col-md-3 text-center"><h4> Tolerabilidad y efectos adversos </h4></div>
+	  </div> 
+
+      <div class="row">
+      	<div class="col-md-2 text-right"><b>Fecha de la 1era dosis</b></div>
+        <div class="col-md-2">
+	      <%= f.date_field :seg_firstdose_date, class: 'form-control' %>
+	    </div>
+	    
+	    <div class="col-md-offset-1 col-md-2 text-right"><b>Duración y descripción del evento adverso:</b></div>
+        <div class="col-md-5">
+	      <%= f.text_area :seg_event_description, class: 'form-control', rows: 2  %>
+	    </div>
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-2 text-right"><b>Fecha de la última dosis</b></div>
+        <div class="col-md-2">
+	      <%= f.date_field :seg_lastdose_date, class: 'form-control' %>
+	    </div>
+      </div>
+      
+      <div class="row">
+      	<div class="col-md-2 text-right"><b>Ha olvidado alguna Dosificación:</b></div>
+        <div class="col-md-2">
+	      <%= f.check_box :seg_missed_dose, class: 'checkbox' %>
+	    </div>
+      </div> 
+      
+      <div class="row">
+      	<div class="col-md-2 text-right"><b>¿Cuando?</b></div>
+        <div class="col-md-3">
+	      <%= f.text_field :seg_missed_details, class: 'form-control' %>
+	    </div>
+      </div> 
+      
+      <div class="row">
+      	<div class="col-md-2 text-right"><b>Recuento de Medicamento</b></div>
+        <div class="col-md-3">
+	      <%= f.text_field :seg_medicament_count, class: 'form-control' %>
+	    </div>
+      </div>
+     
      <div class="spacer-5"></div>
     </div>
     </div>
