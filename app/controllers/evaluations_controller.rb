@@ -73,6 +73,9 @@ class EvaluationsController < ApplicationController
     ## Laboratoriales Quimica
     :qui_indice_aterosclerosis, :qui_apoa1, :qui_apob, :qui_tgoast, :qui_albumina,
     
+    ## Laboratioriales Reumatologia
+    :lab_reuma_c3, :lab_reuma_c4, :lab_reuma_antipad3, :lab_reuma_antipad4,
+    
     # Cardiovascular
     ## Artlab
     :car_artlab_qimt_izq, :car_artlab_qimt_der, :car_artlab_qimt_prom, :car_artlab_diametro1_izq, :car_artlab_diametro1_der,
