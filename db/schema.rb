@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704182917) do
+ActiveRecord::Schema.define(version: 20170704190223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -155,6 +155,14 @@ ActiveRecord::Schema.define(version: 20170704182917) do
     t.string   "exp_fisica_tas"
     t.string   "exp_fisica_tad"
     t.string   "exp_fisica_tam"
+    t.string   "dinam_der1a"
+    t.string   "dinam_der2a"
+    t.string   "dinam_der3a"
+    t.string   "dinam_der4a"
+    t.string   "dinam_izq1a"
+    t.string   "dinam_izq2a"
+    t.string   "dinam_izq3a"
+    t.string   "dinam_izq4a"
   end
 
   create_table "patients", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
