@@ -76,6 +76,9 @@ class EvaluationsController < ApplicationController
     ## Laboratioriales Reumatologia
     :lab_reuma_c3, :lab_reuma_c4, :lab_reuma_antipad3, :lab_reuma_antipad4,
     
+    ## Laboratoriales Moleculares
+    :lab_mol_dna, :lab_mol_rna, :lab_mol_mirna,
+    
     # Cardiovascular
     ## Artlab
     :car_artlab_qimt_izq, :car_artlab_qimt_der, :car_artlab_qimt_prom, :car_artlab_diametro1_izq, :car_artlab_diametro1_der,
