@@ -70,6 +70,9 @@ class EvaluationsController < ApplicationController
     :var_vsg, :var_haq, :var_vop, :var_iac, :var_ic, :var_ta, :var_fc, :var_fresp, :var_temp, :var_lip,
     :var_ct, :var_tg, :var_ldl, :var_vldl, :var_hdl, :var_glu, :var_peso, :var_talla, :var_imc, :var_cc,
     
+    ## Laboratoriales Quimica
+    :qui_indice_aterosclerosis, :qui_apoa1, :qui_apob, :qui_tgoast, :qui_albumina,
+    
     # Cardiovascular
     ## Artlab
     :car_artlab_qimt_izq, :car_artlab_qimt_der, :car_artlab_qimt_prom, :car_artlab_diametro1_izq, :car_artlab_diametro1_der,
