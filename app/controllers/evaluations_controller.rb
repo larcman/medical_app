@@ -72,11 +72,11 @@ class EvaluationsController < ApplicationController
     
     # Cardiovascular
     ## Artlab
-    :car_artlab_qimt_izq, :car_artlab_qimt_der, :car_artlab_diametro1_izq, :car_artlab_diametro1_der,
-    :car_artlab_qimtmax_izq, :car_artlab_qimtmax_der, :car_artlab_distension_der, :car_artlab_diametro2_der,
-    :car_artlab_psisbraquial_der, :car_artlab_pdiasbraquial_der, :car_artlab_psislocal_der, :car_artlab_pdiaslocal_der,
-    :car_artlab_vop_der, :car_artlab_dc_der, :car_artlab_cc_der, :car_artlab_alfa_der, :car_artlab_beta_der,
-    :car_artlab_icp_der, :car_artlab_ed_der, :car_artlab_p_der, :car_artlab_ap_der, :car_artlab_aix_der,
+    :car_artlab_qimt_izq, :car_artlab_qimt_der, :car_artlab_qimt_prom, :car_artlab_diametro1_izq, :car_artlab_diametro1_der,
+    :car_artlab_qimtmax_izq, :car_artlab_qimtmax_der, :car_artlab_distension_der, :car_artlab_distensibilidad_der,
+    :car_artlab_diametro2_der, :car_artlab_psisbraquial_der, :car_artlab_pdiasbraquial_der, :car_artlab_psislocal_der, 
+    :car_artlab_pdiaslocal_der, :car_artlab_vop_der, :car_artlab_dc_der, :car_artlab_cc_der, :car_artlab_alfa_der, 
+    :car_artlab_beta_der, :car_artlab_icp_der, :car_artlab_ed_der, :car_artlab_p_der, :car_artlab_ap_der, :car_artlab_aix_der,
     :car_artlab_presenciaplaca_izq, :car_artlab_presenciaplaca_der,
     ## pOpmtre
     :car_pwv1a, :car_pwv2a, :car_pwv3a, :car_pwv4a,
@@ -86,7 +86,7 @@ class EvaluationsController < ApplicationController
     :car_vopcf, :car_ap, :car_carfem, :car_aix, :car_ppas, :car_caris, :car_presioncentral, 
     :car_ppad, :car_isfem, :car_cpp, :car_percentil, :car_sevr,
     ## Cavi
-    :car_cavi_der, :car_cavi_izq, :car_abi_der, :car_abi_izq,
+    :car_cavi_der, :car_cavi_izq, :car_cavi_prom, :car_abi_der, :car_abi_izq, :car_abi_prom,
     
     # Seguimiento
     :seg_peso, :seg_talla, :seg_imc, :seg_body_fat, :seg_abdominal_girth, :seg_fc, :seg_fr,

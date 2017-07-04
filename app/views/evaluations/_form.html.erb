@@ -147,13 +147,15 @@
 	  
       <div class="row">
       	<div class="col-md-offset-3 col-md-2 text-center"><b>Izquierda</b></div>
-      	<div class="col-md-2 text-center"><b>Derecha</b></div>      	
+      	<div class="col-md-2 text-center"><b>Derecha</b></div>   
+      	<div class="col-md-2 text-center"><b>Promedio</b></div>    	
       </div>
       
       <div class="row">
       	<div class="col-md-offset-1 col-md-2"><b>QIMT (&#181;m)</b></div>
       	<div class="col-md-2"><%= f.text_field :car_artlab_qimt_izq, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_artlab_qimt_der, class: 'form-control' %></div>     	      	      	
+      	<div class="col-md-2"><%= f.text_field :car_artlab_qimt_der, class: 'form-control' %></div>    
+      	<div class="col-md-2"><%= f.text_field :car_artlab_qimt_prom, class: 'form-control' %></div>  	      	      	
       </div>
       
       <div class="row">
@@ -172,6 +174,11 @@
       	<div class="col-md-offset-1 col-md-2"><b>Distensión (&#181;m)</b></div>
       	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_distension_der, class: 'form-control' %></div>     	      	      	
       </div>
+      
+      <div class="row">
+      	<div class="col-md-offset-1 col-md-2"><b>Distensibilidad (&#181;m)</b></div>
+      	<div class="col-md-offset-2 col-md-2"><%= f.text_field :car_artlab_distensibilidad_der, class: 'form-control' %></div>     	      	      	
+      </div>      
       
       <div class="row">
       	<div class="col-md-offset-1 col-md-2"><b>Diámetro (mm)</b></div>
@@ -363,25 +370,35 @@
 	  	<h4> CAVI </h4>
 	  </div>
 	  
-	  <div class="col-md-3">	    
+	  <div class="col-md-4">	    
 	    <b>CAVI-I</b>
 	    <%= f.text_field :car_cavi_izq, class: 'form-control' %>
 	  </div>
 	  
-	  <div class="col-md-3">	    
+	  <div class="col-md-4">	    
 	    <b>CAVI-D</b>
 	    <%= f.text_field :car_cavi_der, class: 'form-control' %>
 	  </div>
 	  
-	  <div class="col-md-3">	    
+	  <div class="col-md-4">	    
+	    <b>CAVI Promedio</b>
+	    <%= f.text_field :car_cavi_prom, class: 'form-control' %>
+	  </div>
+	  
+	  <div class="col-md-4">
 	    <b>ABI-I</b>
 	    <%= f.text_field :car_abi_izq, class: 'form-control' %>
 	  </div>
-	  
-	  <div class="col-md-3">	    
+  
+	  <div class="col-md-4">
 	    <b>ABI-D</b>
 	    <%= f.text_field :car_abi_der, class: 'form-control' %>
-	  </div>      
+	  </div>
+	  
+	  <div class="col-md-4">
+	    <b>ABI Promedio</b>
+	    <%= f.text_field :car_abi_prom, class: 'form-control' %>
+	  </div> 
       
       <div class="spacer-5"></div>
 	</div>

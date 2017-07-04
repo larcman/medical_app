@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404050815) do
+ActiveRecord::Schema.define(version: 20170704024515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,12 +61,12 @@ ActiveRecord::Schema.define(version: 20170404050815) do
     t.string   "var_talla"
     t.string   "var_imc"
     t.string   "var_cc"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-    t.string   "appointment_id",                                null: false
-    t.string   "center_id",                                     null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.string   "appointment_id",                                 null: false
+    t.string   "center_id",                                      null: false
     t.string   "var_fresp"
-    t.string   "research_id",                                   null: false
+    t.string   "research_id",                                    null: false
     t.string   "car_vopcf"
     t.string   "car_aix"
     t.string   "car_presioncentral"
@@ -114,8 +114,8 @@ ActiveRecord::Schema.define(version: 20170404050815) do
     t.string   "car_artlab_p_der"
     t.string   "car_artlab_ap_der"
     t.string   "car_artlab_aix_der"
-    t.boolean  "car_artlab_presenciaplaca_izq", default: false
-    t.boolean  "car_artlab_presenciaplaca_der", default: false
+    t.boolean  "car_artlab_presenciaplaca_izq",  default: false
+    t.boolean  "car_artlab_presenciaplaca_der",  default: false
     t.string   "car_cavi_der"
     t.string   "car_cavi_izq"
     t.string   "car_abi_der"
@@ -132,10 +132,14 @@ ActiveRecord::Schema.define(version: 20170404050815) do
     t.string   "seg_waist_circumference"
     t.date     "seg_firstdose_date"
     t.date     "seg_lastdose_date"
-    t.boolean  "seg_missed_dose",               default: false
+    t.boolean  "seg_missed_dose",                default: false
     t.string   "seg_missed_details"
     t.string   "seg_medicament_count"
     t.text     "seg_event_description"
+    t.string   "car_artlab_qimt_prom"
+    t.string   "car_artlab_distensibilidad_der"
+    t.string   "car_cavi_prom"
+    t.string   "car_abi_prom"
   end
 
   create_table "patients", id: :string, default: -> { "get_uuid()" }, force: :cascade do |t|
