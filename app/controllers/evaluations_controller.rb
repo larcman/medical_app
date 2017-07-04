@@ -79,6 +79,9 @@ class EvaluationsController < ApplicationController
     ## Laboratoriales Moleculares
     :lab_mol_dna, :lab_mol_rna, :lab_mol_mirna,
     
+    ## Exploracion Fisica
+    :exp_fisica_tas, :exp_fisica_tad, :exp_fisica_tam,
+    
     # Cardiovascular
     ## Artlab
     :car_artlab_qimt_izq, :car_artlab_qimt_der, :car_artlab_qimt_prom, :car_artlab_diametro1_izq, :car_artlab_diametro1_der,
