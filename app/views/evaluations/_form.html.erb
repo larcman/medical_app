@@ -273,29 +273,62 @@
       	<div class="col-md-2 text-center"><b>3a</b></div>      	
       	<div class="col-md-2 text-center"><b>Promedio</b></div>        	
       </div> 
-      
+
+      <%
+        # In case the value is null, it calculates it automatically
+        @pwd_prom = @evaluation.car_pwv4a
+        if @evaluation.car_pwv4a.to_s.empty?
+          if @evaluation.car_pwv3a.to_s.empty?
+            @pwd_prom = (@evaluation.car_pwv1a.to_f + @evaluation.car_pwv2a.to_f) / 2
+          else
+            @pwd_prom = (@evaluation.car_pwv1a.to_f + @evaluation.car_pwv2a.to_f + @evaluation.car_pwv3a.to_f) / 3
+          end
+          @pwd_prom = @pwd_prom.round(2)
+        end
+
+        @tt_prom = @evaluation.car_tt4a
+        if @evaluation.car_tt4a.to_s.empty?
+          if @evaluation.car_tt3a.to_s.empty?
+            @tt_prom = (@evaluation.car_tt1a.to_f + @evaluation.car_tt2a.to_f) / 2
+          else
+            @tt_prom = (@evaluation.car_tt1a.to_f + @evaluation.car_tt2a.to_f + @evaluation.car_tt3a.to_f) / 3
+		  end
+		  @tt_prom = @tt_prom.round(2)
+		end
+
+        @pop_prom = @evaluation.car_popscore4a
+        if @evaluation.car_popscore4a.to_s.empty?
+		  if @evaluation.car_popscore3a.to_s.empty?
+            @pop_prom = (@evaluation.car_popscore1a.to_f + @evaluation.car_popscore2a.to_f) / 2
+          else
+            @pop_prom = (@evaluation.car_popscore1a.to_f + @evaluation.car_popscore2a.to_f + @evaluation.car_popscore3a.to_f) / 3
+		  end
+		  @pop_prom = @pop_prom.round(2)
+		end
+      %>
+
       <div class="row">
       	<div class="col-md-offset-1 col-md-2"><b>PWV</b></div>
-      	<div class="col-md-2"><%= f.text_field :car_pwv1a, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_pwv2a, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_pwv3a, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_pwv4a, class: 'form-control' %></div>      	      	      	
+      	<div class="col-md-2"><%= f.text_field :car_pwv1a, class: 'form-control', onchange: "getPWVProm();" %></div>
+      	<div class="col-md-2"><%= f.text_field :car_pwv2a, class: 'form-control', onchange: "getPWVProm();" %></div>
+      	<div class="col-md-2"><%= f.text_field :car_pwv3a, class: 'form-control', onchange: "getPWVProm();" %></div>
+      	<div class="col-md-2"><%= f.text_field :car_pwv4a, class: 'form-control', value: @pwd_prom %></div>
       </div>
       
       <div class="row">
       	<div class="col-md-offset-1 col-md-2"><b>TT</b></div>
-      	<div class="col-md-2"><%= f.text_field :car_tt1a, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_tt2a, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_tt3a, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_tt4a, class: 'form-control' %></div>      	      	      	
+      	<div class="col-md-2"><%= f.text_field :car_tt1a, class: 'form-control', onchange: "getTTProm();" %></div>
+      	<div class="col-md-2"><%= f.text_field :car_tt2a, class: 'form-control', onchange: "getTTProm();" %></div>
+      	<div class="col-md-2"><%= f.text_field :car_tt3a, class: 'form-control', onchange: "getTTProm();" %></div>
+      	<div class="col-md-2"><%= f.text_field :car_tt4a, class: 'form-control', value: @tt_prom %></div>      	      	      	
       </div>
       
       <div class="row">
       	<div class="col-md-offset-1 col-md-2"><b>Popscore</b></div>
-      	<div class="col-md-2"><%= f.text_field :car_popscore1a, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_popscore2a, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_popscore3a, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_popscore4a, class: 'form-control' %></div>      	      	      	
+      	<div class="col-md-2"><%= f.text_field :car_popscore1a, class: 'form-control', onchange: "getPOPProm();" %></div>
+      	<div class="col-md-2"><%= f.text_field :car_popscore2a, class: 'form-control', onchange: "getPOPProm();" %></div>
+      	<div class="col-md-2"><%= f.text_field :car_popscore3a, class: 'form-control', onchange: "getPOPProm();" %></div>
+      	<div class="col-md-2"><%= f.text_field :car_popscore4a, class: 'form-control', value: @pop_prom %></div>      	      	      	
       </div>            
       
       <div class="spacer-5"></div>      

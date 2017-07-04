@@ -35,6 +35,45 @@ function filterTable (field, table, colnum) {
   }
 };
 
+function getPWVProm () {
+  var field1, field2, field3, field4, prom, div = 3;
+  field1 = Number(document.getElementById('evaluation_car_pwv1a').value);
+  field2 = Number(document.getElementById('evaluation_car_pwv2a').value);
+  field3 = Number(document.getElementById('evaluation_car_pwv3a').value);
+  if (isNaN(field3) || field3 === 0) {
+    field3 = 0;
+    div = 2;
+  }
+  prom = (field1 + field2 + field3) / div;
+  document.getElementById('evaluation_car_pwv4a').value = prom.toFixed(2);
+};
+
+function getTTProm () {
+  var field1, field2, field3, field4, prom, div = 3;
+  field1 = Number(document.getElementById('evaluation_car_tt1a').value);
+  field2 = Number(document.getElementById('evaluation_car_tt2a').value);
+  field3 = Number(document.getElementById('evaluation_car_tt3a').value);
+  if (isNaN(field3) || field3 === 0) {
+    field3 = 0;
+    div = 2;
+  }
+  prom = (field1 + field2 + field3) / div;
+  document.getElementById('evaluation_car_tt4a').value = prom.toFixed(2);
+};
+
+function getPOPProm () {
+  var field1, field2, field3, field4, prom, div = 3;
+  field1 = Number(document.getElementById('evaluation_car_popscore1a').value);
+  field2 = Number(document.getElementById('evaluation_car_popscore2a').value);
+  field3 = Number(document.getElementById('evaluation_car_popscore3a').value);
+  if (isNaN(field3) || field3 === 0) {
+    field3 = 0;
+    div = 2;
+  }
+  prom = (field1 + field2 + field3) / div;
+  document.getElementById('evaluation_car_popscore4a').value = prom.toFixed(2);
+};
+
 
 $(document).ready(function () {
 
