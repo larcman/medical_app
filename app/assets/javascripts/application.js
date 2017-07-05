@@ -74,6 +74,47 @@ function getPOPProm () {
   document.getElementById('evaluation_car_popscore4a').value = prom.toFixed(2);
 };
 
+function getQimtProm () {
+  var field1, field2, field3, prom, div = 2;
+  field1 = Number(document.getElementById('evaluation_car_artlab_qimt_izq').value);
+  field2 = Number(document.getElementById('evaluation_car_artlab_qimt_der').value);
+  if (isNaN(field1) || field1 === 0) {
+    field1 = 0;
+    div = 1;
+  }
+  if (isNaN(field2) || field2 === 0) {
+    field2 = 0;
+    div = 1;
+  }
+  prom = (field1 + field2) / div;
+  document.getElementById('evaluation_car_artlab_qimt_prom').value = prom.toFixed(2);
+};
+
+function getDinamDerProm () {
+  var field1, field2, field3, field4, prom, div = 3;
+  field1 = Number(document.getElementById('evaluation_dinam_der1a').value);
+  field2 = Number(document.getElementById('evaluation_dinam_der2a').value);
+  field3 = Number(document.getElementById('evaluation_dinam_der3a').value);
+  if (isNaN(field3) || field3 === 0) {
+    field3 = 0;
+    div = 2;
+  }
+  prom = (field1 + field2 + field3) / div;
+  document.getElementById('evaluation_dinam_der4a').value = prom.toFixed(2);
+};
+
+function getDinamIzqProm () {
+  var field1, field2, field3, field4, prom, div = 3;
+  field1 = Number(document.getElementById('evaluation_dinam_izq1a').value);
+  field2 = Number(document.getElementById('evaluation_dinam_izq2a').value);
+  field3 = Number(document.getElementById('evaluation_dinam_izq3a').value);
+  if (isNaN(field3) || field3 === 0) {
+    field3 = 0;
+    div = 2;
+  }
+  prom = (field1 + field2 + field3) / div;
+  document.getElementById('evaluation_dinam_izq4a').value = prom.toFixed(2);
+};
 
 $(document).ready(function () {
 

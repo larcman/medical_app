@@ -2,7 +2,6 @@
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#tab0" aria-controls="tab0" role="tab" data-toggle="tab">General</a></li>
-  <li role="presentation"><a href="#tab00" aria-controls="tab00" role="tab" data-toggle="tab">General</a></li>
   <li role="presentation"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Cardiovascular</a></li>
   <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Seguimiento</a></li>
 </ul>
@@ -12,134 +11,7 @@
     <div class="tab-content">
 
 	<!-- 1st Tab -->
-    <div role="tabpanel" class="tab-pane active" id="tab0">
-      <div class="spacer-5"></div>
-      
-        <div class="col-md-4">
-	      <b>Factor Reumatoide (FR)</b>
-	      <%= f.text_field :var_fr, class: 'form-control' %>
-	    </div>
-	    
-	    <div class="col-md-4">
-	      <b>Anticuerpo anit-peptido citrulinado (ACPA)</b>
-	      <%= f.text_field :var_acpa, class: 'form-control' %>
-	    </div>
-	    
-	    <div class="col-md-4">
-	      <b>Factor de Necrosis Tumoral alfa (TNF-a)</b>
-	      <%= f.text_field :var_tnfa, class: 'form-control' %>
-	    </div>
-	    
-	    <div class="col-md-4">	    
-	      <b>Interleucina 1 (IL-1)</b>
-	      <%= f.text_field :var_il1, class: 'form-control' %>
-	    </div>	    
-	    
-	    <div class="col-md-4">	    
-	      <b>Interleucina 6 (IL-6)</b>
-	      <%= f.text_field :var_il6, class: 'form-control' %>
-	    </div>	    
-	    
-	    <div class="col-md-4">	    
-	      <b>Proteína C reactiva (PCR)</b>
-	      <%= f.text_field :var_pcr, class: 'form-control' %>
-	    </div>
-	    	    
-	    <div class="col-md-4">	    
-	      <b>Disease Activity Score 28 (DAS-28)</b>
-	      <%= f.text_field :var_das28, class: 'form-control' %>
-	    </div>	    
-	    
-	    <div class="col-md-4">	    
-	      <b>Velocidad de sedimentación globular (VSG)</b>
-	      <%= f.text_field :var_vsg, class: 'form-control' %>
-	    </div>	    
-	    
-	    <div class="col-md-4">	    
-	      <b>Health Assessment Questionnaire (HAQ)</b>
-	      <%= f.text_field :var_haq, class: 'form-control' %>
-	    </div>	      
-
-	    <div class="col-md-4">	
-	      <b>Tension Arterial (T/A)</b>
-	      <%= f.text_field :var_ta, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-4">	    
-	      <b>Frecuencia Cardiaca (FC)</b>
-	      <%= f.text_field :var_fc, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-4">	    
-	      <b>Frequencia Respiratoria (Fr)</b>
-	      <%= f.text_field :var_fresp, class: 'form-control' %>
-	    </div>	      
-	
-	    <div class="col-md-4">	
-	      <b>Temperatura (Temp)</b>
-	      <%= f.text_field :var_temp, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-4">	    
-	      <b>Lipidos (Lip)</b>
-	      <%= f.text_field :var_lip, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-4">	    
-	      <b>Colesterol Total (CT)</b>
-	      <%= f.text_field :var_ct, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-4">	    
-	      <b>Trigliceridos (TG)</b>
-	      <%= f.text_field :var_tg, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-4">	    
-	      <b>Liproteína de baja densidad (LDL)</b>
-	      <%= f.text_field :var_ldl, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-4">	    
-	      <b>Liproteína de muy baja densidad (VLDL)</b>
-	      <%= f.text_field :var_vldl, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-4">	    
-	      <b>Liproteína de alta densidad (HDL)</b>
-	      <%= f.text_field :var_hdl, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-4">	    
-	      <b>Glucosa (Glu)</b>
-	      <%= f.text_field :var_glu, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-2">	    
-	      <b>Peso (Kg)</b>
-	      <%= f.text_field :var_peso, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-2">	    
-	      <b>Talla (Cm)</b>
-	      <%= f.text_field :var_talla, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-4">	    
-	      <b>Indice de masa corporal (IMC)</b>
-	      <%= f.text_field :var_imc, class: 'form-control' %>
-	    </div>	      
-	    
-	    <div class="col-md-4">	    
-	      <b>Circunferencia de cintura (CC)</b>
-	      <%= f.text_field :var_cc, class: 'form-control' %>
-	    </div>	      
-      
-      <div class="spacer-5"></div>		
-	</div>
-	
-	<!-- 1st Tab -->
-	<div role="tabpanel" class="tab-pane" id="tab00">
+	<div role="tabpanel" class="tab-pane active" id="tab0">
       <div class="spacer-5"></div>
       
       <div class="col-md-12">
@@ -367,17 +239,17 @@
       
       <div class="row">
       	<div class="col-md-offset-1 col-md-2"><b>Derecha</b></div>
-      	<div class="col-md-2"><%= f.text_field :dinam_der1a, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :dinam_der2a, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :dinam_der3a, class: 'form-control' %></div>
+      	<div class="col-md-2"><%= f.text_field :dinam_der1a, class: 'form-control', onchange: 'getDinamDerProm();' %></div>
+      	<div class="col-md-2"><%= f.text_field :dinam_der2a, class: 'form-control', onchange: 'getDinamDerProm();' %></div>
+      	<div class="col-md-2"><%= f.text_field :dinam_der3a, class: 'form-control', onchange: 'getDinamDerProm();' %></div>
       	<div class="col-md-2"><%= f.text_field :dinam_der4a, class: 'form-control' %></div>
       </div>
       
       <div class="row">
       	<div class="col-md-offset-1 col-md-2"><b>Izquierda</b></div>
-      	<div class="col-md-2"><%= f.text_field :dinam_izq1a, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :dinam_izq2a, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :dinam_izq3a, class: 'form-control' %></div>
+      	<div class="col-md-2"><%= f.text_field :dinam_izq1a, class: 'form-control', onchange: 'getDinamIzqProm();' %></div>
+      	<div class="col-md-2"><%= f.text_field :dinam_izq2a, class: 'form-control', onchange: 'getDinamIzqProm();' %></div>
+      	<div class="col-md-2"><%= f.text_field :dinam_izq3a, class: 'form-control', onchange: 'getDinamIzqProm();' %></div>
       	<div class="col-md-2"><%= f.text_field :dinam_izq4a, class: 'form-control' %></div>      	      	      	
       </div>
 	  
@@ -468,8 +340,8 @@
       
       <div class="row">
       	<div class="col-md-offset-1 col-md-2"><b>QIMT (&#181;m)</b></div>
-      	<div class="col-md-2"><%= f.text_field :car_artlab_qimt_izq, class: 'form-control' %></div>
-      	<div class="col-md-2"><%= f.text_field :car_artlab_qimt_der, class: 'form-control' %></div>    
+      	<div class="col-md-2"><%= f.text_field :car_artlab_qimt_izq, class: 'form-control', onchange: 'getQimtProm();' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_artlab_qimt_der, class: 'form-control', onchange: 'getQimtProm();' %></div>    
       	<div class="col-md-2"><%= f.text_field :car_artlab_qimt_prom, class: 'form-control' %></div>  	      	      	
       </div>
       
@@ -624,10 +496,10 @@
 
       <div class="row">
       	<div class="col-md-offset-1 col-md-2"><b>PWV</b></div>
-      	<div class="col-md-2"><%= f.text_field :car_pwv1a, class: 'form-control', onchange: "getPWVProm();" %></div>
-      	<div class="col-md-2"><%= f.text_field :car_pwv2a, class: 'form-control', onchange: "getPWVProm();" %></div>
-      	<div class="col-md-2"><%= f.text_field :car_pwv3a, class: 'form-control', onchange: "getPWVProm();" %></div>
-      	<div class="col-md-2"><%= f.text_field :car_pwv4a, class: 'form-control', value: @pwd_prom %></div>
+      	<div class="col-md-2"><%= f.text_field :car_pwv1a, class: 'form-control', onchange: 'getPWVProm();' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_pwv2a, class: 'form-control', onchange: 'getPWVProm();' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_pwv3a, class: 'form-control', onchange: 'getPWVProm();' %></div>
+      	<div class="col-md-2"><%= f.text_field :car_pwv4a, class: 'form-control' %></div>
       </div>
       
       <div class="row">
