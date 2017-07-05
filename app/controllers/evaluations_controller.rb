@@ -89,7 +89,7 @@ class EvaluationsController < ApplicationController
     
     ## Reumatologia
     :reuma_nad, :reuma_nat, :reuma_eva_enfermedad, :reuma_eva_ddos,
-    :reuma_eva_medico, :reuma_cdai, :reuma_sdai,
+    :reuma_eva_medico, :reuma_cdai, :reuma_sdai, :var_das28pcr,
     
     # Cardiovascular
     ## Artlab
