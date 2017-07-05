@@ -333,14 +333,14 @@
 	    <%= f.text_field :var_peso, class: 'form-control' %>
 	  </div>	
 	  
-	  <div class="col-md-3">	    
+	  <div class="col-md-3">
 	    <b>Indice de masa corporal (IMC)</b>
 	    <%= f.text_field :var_imc, class: 'form-control' %>
 	  </div>
 	  
 	  <div class="col-md-3">	    
 	    <b>% Grasa Total</b>
-	    <%= f.text_field :var_imc, class: 'form-control' %>
+	    <%= f.text_field :nut_grasa_total, class: 'form-control' %>
 	  </div>	
 	    
 	  <div class="col-md-3">	    
@@ -350,12 +350,12 @@
 	  
 	  <div class="col-md-3">	    
 	    <b>Circunferencia de cadera</b>
-	    <%= f.text_field :var_cc, class: 'form-control' %>
+	    <%= f.text_field :nut_ccad, class: 'form-control' %>
 	  </div>
 	  
 	  <div class="spacer-5"></div> 
       <div class="col-md-offset-1 col-md-11">
-	  	<h4> Dinamometro </h4>
+	  	<h4> Dinamometro de Mano</h4>
 	  </div> 
 	  
       <div class="row">
@@ -388,24 +388,14 @@
       <div class="col-md-12">
 	  	<h4> Reumatología </h4>
 	  </div>
-	  
-	  <div class="col-md-4">	    
-	    <b>NAD</b>
-	    <%= f.text_field :reuma_nad, class: 'form-control' %>
-	  </div>
-	  
-	  <div class="col-md-4">	    
-	    <b>NAT</b>
-	    <%= f.text_field :reuma_nat, class: 'form-control' %>
-	  </div>
-	  
+
 	  <div class="col-md-4">	    
 	    <b>EVA Enfermedad</b>
 	    <%= f.text_field :reuma_eva_enfermedad, class: 'form-control' %>
 	  </div>
 	  
 	  <div class="col-md-4">	    
-	    <b>EVA Ddos</b>
+	    <b>EVA Dolor</b>
 	    <%= f.text_field :reuma_eva_ddos, class: 'form-control' %>
 	  </div>
 	  
@@ -414,26 +404,6 @@
 	    <%= f.text_field :reuma_eva_medico, class: 'form-control' %>
 	  </div>
 	  
-	  <div class="col-md-4">	    
-	    <b>Velocidad de sedimentación globular (VSG)</b>
-	    <%= f.text_field :var_vsg, class: 'form-control' %>
-	  </div>
-	  
-	  <div class="col-md-4">	    
-	    <b>Proteína C reactiva (PCR)</b>
-	    <%= f.text_field :var_pcr, class: 'form-control' %>
-	  </div>
-	    	    
-	  <div class="col-md-4">	    
-	    <b>Disease Activity Score 28 (DAS-28)</b>
-	    <%= f.text_field :var_das28, class: 'form-control' %>
-	  </div>
-	  
-	  <div class="col-md-4">	    
-	    <b>Disease Activity Score 28 (DAS-28 PCR)</b>
-	    <%= f.text_field :var_das28, class: 'form-control' %>
-	  </div>
-
 	  <div class="col-md-4">	    
 	    <b>CDAI</b>
 	    <%= f.text_field :reuma_cdai, class: 'form-control' %>
@@ -447,7 +417,37 @@
 	  <div class="col-md-4">	    
 	    <b>Health Assessment Questionnaire (HAQ)</b>
 	    <%= f.text_field :var_haq, class: 'form-control' %>
-	  </div>	
+	  </div>
+	  
+	  <div class="col-md-5">	    
+	    <b>NAD</b>
+	    <%= f.text_field :reuma_nad, class: 'form-control' %>
+	  </div>
+	  
+	  <div class="col-md-5">	    
+	    <b>NAT</b>
+	    <%= f.text_field :reuma_nat, class: 'form-control' %>
+	  </div>
+	  
+	  <div class="col-md-5">	    
+	    <b>Velocidad de sedimentación globular (VSG)</b>
+	    <%= f.text_field :var_vsg, class: 'form-control' %>
+	  </div>
+	  
+	  <div class="col-md-5">	    
+	    <b>Disease Activity Score 28 (DAS-28 VSG)</b>
+	    <%= f.text_field :var_das28, class: 'form-control' %>
+	  </div>
+	  
+	  <div class="col-md-5">	    
+	    <b>Proteína C reactiva (PCR)</b>
+	    <%= f.text_field :var_pcr, class: 'form-control' %>
+	  </div>
+	  
+	  <div class="col-md-5">
+	    <b>Disease Activity Score 28 (DAS-28 PCR)</b>
+	    <%= f.text_field :var_das28, class: 'form-control' %>
+	  </div>
 	  
 	  <div class="spacer-5"></div>
 	</div>

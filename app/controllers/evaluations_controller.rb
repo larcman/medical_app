@@ -83,6 +83,7 @@ class EvaluationsController < ApplicationController
     :exp_fisica_tas, :exp_fisica_tad, :exp_fisica_tam,
     
     ## Nutricion
+    :nut_grasa_total, :nut_ccad,
     :dinam_der1a, :dinam_der2a, :dinam_der3a, :dinam_der4a,
     :dinam_izq1a, :dinam_izq2a, :dinam_izq3a, :dinam_izq4a,
     
