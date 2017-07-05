@@ -40,7 +40,7 @@
     <%= f.time_field :starttime, class: 'form-control' %>      
 
     <b>Status</b>
-    <%= f.select :status, ['Pendiente Agendar', 'Agendada', 'Completada', 'Cancelada'], {:include_blank => false}, {:class => 'form-control'} %>
+    <%= f.select :status, ['Pendiente Agendar', 'Agendada', 'Completada', 'Cancelada', 'Analisis Completo'], {:include_blank => false}, {:class => 'form-control'} %>
 
     <%= f.hidden_field :patient_id, :value => @patient.id %>
     <%= f.hidden_field :quick_creation, :value => true %>
