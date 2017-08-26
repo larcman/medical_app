@@ -36,41 +36,59 @@ function filterTable (field, table, colnum) {
 };
 
 function getPWVProm () {
-  var field1, field2, field3, field4, prom, div = 3;
+  var field1, field2, field3, field4, prom, media = false;
   field1 = Number(document.getElementById('evaluation_car_pwv1a').value);
   field2 = Number(document.getElementById('evaluation_car_pwv2a').value);
   field3 = Number(document.getElementById('evaluation_car_pwv3a').value);
   if (isNaN(field3) || field3 === 0) {
     field3 = 0;
-    div = 2;
+    media = true;
   }
-  prom = (field1 + field2 + field3) / div;
+  if (media) {
+    prom = (field1 + field2) / 2;
+  } else {
+  	data = [field1, field2, field3];
+  	data.sort();
+  	prom = data[1];
+  }
   document.getElementById('evaluation_car_pwv4a').value = prom.toFixed(2);
 };
 
 function getTTProm () {
-  var field1, field2, field3, field4, prom, div = 3;
+  var field1, field2, field3, field4, prom, media = false;
   field1 = Number(document.getElementById('evaluation_car_tt1a').value);
   field2 = Number(document.getElementById('evaluation_car_tt2a').value);
   field3 = Number(document.getElementById('evaluation_car_tt3a').value);
   if (isNaN(field3) || field3 === 0) {
     field3 = 0;
-    div = 2;
+    media = true;
   }
-  prom = (field1 + field2 + field3) / div;
+  if (media) {
+    prom = (field1 + field2) / 2;
+  } else {
+  	data = [field1, field2, field3];
+  	data.sort();
+  	prom = data[1];
+  }
   document.getElementById('evaluation_car_tt4a').value = prom.toFixed(2);
 };
 
 function getPOPProm () {
-  var field1, field2, field3, field4, prom, div = 3;
+  var field1, field2, field3, field4, prom, media = false;
   field1 = Number(document.getElementById('evaluation_car_popscore1a').value);
   field2 = Number(document.getElementById('evaluation_car_popscore2a').value);
   field3 = Number(document.getElementById('evaluation_car_popscore3a').value);
   if (isNaN(field3) || field3 === 0) {
     field3 = 0;
-    div = 2;
+    media = true;
   }
-  prom = (field1 + field2 + field3) / div;
+  if (media) {
+    prom = (field1 + field2) / 2;
+  } else {
+  	data = [field1, field2, field3];
+  	data.sort();
+  	prom = data[1];
+  }
   document.getElementById('evaluation_car_popscore4a').value = prom.toFixed(2);
 };
 
@@ -91,29 +109,73 @@ function getQimtProm () {
 };
 
 function getDinamDerProm () {
-  var field1, field2, field3, field4, prom, div = 3;
+  var field1, field2, field3, field4, prom, media = false;
   field1 = Number(document.getElementById('evaluation_dinam_der1a').value);
   field2 = Number(document.getElementById('evaluation_dinam_der2a').value);
   field3 = Number(document.getElementById('evaluation_dinam_der3a').value);
   if (isNaN(field3) || field3 === 0) {
     field3 = 0;
-    div = 2;
+    media = true;
   }
-  prom = (field1 + field2 + field3) / div;
+  if (media) {
+    prom = (field1 + field2) / 2;
+  } else {
+  	data = [field1, field2, field3];
+  	data.sort();
+  	prom = data[1];
+  }
   document.getElementById('evaluation_dinam_der4a').value = prom.toFixed(2);
 };
 
 function getDinamIzqProm () {
-  var field1, field2, field3, field4, prom, div = 3;
+  var field1, field2, field3, field4, prom, media = false;
   field1 = Number(document.getElementById('evaluation_dinam_izq1a').value);
   field2 = Number(document.getElementById('evaluation_dinam_izq2a').value);
   field3 = Number(document.getElementById('evaluation_dinam_izq3a').value);
   if (isNaN(field3) || field3 === 0) {
     field3 = 0;
-    div = 2;
+    media = true;
   }
-  prom = (field1 + field2 + field3) / div;
+  if (media) {
+    prom = (field1 + field2) / 2;
+  } else {
+  	data = [field1, field2, field3];
+  	data.sort();
+  	prom = data[1];
+  }
   document.getElementById('evaluation_dinam_izq4a').value = prom.toFixed(2);
+};
+
+function getCAVIProm () {
+  var field1, field2, field3, prom, div = 2;
+  field1 = Number(document.getElementById('evaluation_car_cavi_izq').value);
+  field2 = Number(document.getElementById('evaluation_car_cavi_der').value);
+  if (isNaN(field1) || field1 === 0) {
+    field1 = 0;
+    div = 1;
+  }
+  if (isNaN(field2) || field2 === 0) {
+    field2 = 0;
+    div = 1;
+  }
+  prom = (field1 + field2) / div;
+  document.getElementById('evaluation_car_cavi_prom').value = prom.toFixed(2);
+};
+
+function getABIProm () {
+  var field1, field2, field3, prom, div = 2;
+  field1 = Number(document.getElementById('evaluation_car_abi_izq').value);
+  field2 = Number(document.getElementById('evaluation_car_abi_der').value);
+  if (isNaN(field1) || field1 === 0) {
+    field1 = 0;
+    div = 1;
+  }
+  if (isNaN(field2) || field2 === 0) {
+    field2 = 0;
+    div = 1;
+  }
+  prom = (field1 + field2) / div;
+  document.getElementById('evaluation_car_abi_prom').value = prom.toFixed(2);
 };
 
 $(document).ready(function () {
