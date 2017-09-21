@@ -2,10 +2,18 @@ class ResearchesController < ApplicationController
   before_action :require_user
   
   def index
-    # TODO: Develop multi researches support
-    # Develop view and disable option in menu
-    # @researches = Research.all.order(created_at: :asc)
-    redirect_to action: 'show', id: 0
+    if (params[:format])
+      @researches = Research.order(:id) # TODO: Here is the place to query
+      respond_to do |format|
+        format.csv { send_data @researches.to_csv }
+        format.xls # { send_data @researches.to_csv([:code, :name, :user_id], @researches, col_sep: "\t") }
+      end
+    else
+      # TODO: Develop multi researches support
+      # Develop view and disable option in menu
+      # @researches = Research.all.order(created_at: :asc)
+      redirect_to action: 'show', id: 0
+    end
   end
 
   def show

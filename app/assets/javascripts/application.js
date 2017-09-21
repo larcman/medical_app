@@ -16,6 +16,8 @@
 //= require bootstrap.min
 //= require_tree .
 
+require 'csv'
+
 function filterTable (field, table, colnum) {
   var input, filter, tab, tr, td, i;
   input = document.getElementById(field);

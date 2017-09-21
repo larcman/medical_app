@@ -19,6 +19,7 @@
     <%= f.hidden_field :research_id, :value => @research.id %>
     <%= f.hidden_field :quick_creation, :value => true %>
     <%= f.submit "Agregar Paciente", class: "btn btn-primary" %>
+    <%= link_to "Imprimir Reporte", researches_path(format: "xls"), class: "btn btn-primary" %>
   <% end %>
 </div>
 
