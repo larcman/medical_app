@@ -7,15 +7,15 @@
   <Worksheet ss:Name="Sheet1">
     <Table>
       <Row>
-        <Cell><Data ss:Type="String">Code</Data></Cell>
-        <Cell><Data ss:Type="String">Name</Data></Cell>
-        <Cell><Data ss:Type="String">Owner</Data></Cell>
+        <Cell><Data ss:Type="String">Codigo</Data></Cell>
+        <Cell><Data ss:Type="String">Persona</Data></Cell>
+        <Cell><Data ss:Type="String">Fecha</Data></Cell>
       </Row>
-    <% @researches.each do |research| %>
+    <% @records.each do |record| %>
       <Row>
-        <Cell><Data ss:Type="String"><%= research.code %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= research.name %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= research.user_id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.code %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.firstname %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.day %></Data></Cell>
       </Row>
     <% end %>
     </Table>

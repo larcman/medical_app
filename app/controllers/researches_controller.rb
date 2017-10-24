@@ -3,11 +3,46 @@ class ResearchesController < ApplicationController
   
   def index
     if (params[:format])
-      @researches = Research.order(:id) # TODO: Here is the place to query
-      respond_to do |format|
-        format.csv { send_data @researches.to_csv }
-        format.xls # { send_data @researches.to_csv([:code, :name, :user_id], @researches, col_sep: "\t") }
+      # Execute Query
+      @records = []      
+      @rows = Evaluation.select("patients.code, people.firstname, appointments.day").
+      joins(appointment: {patient: :person}).
+      where("appointments.status = 'Analisis Completo'").
+      order("patients.id, appointments.day")
+      
+      # Order the records
+      rows_count = 0
+      prev_patient = ""
+      _1st_round = true
+      r = ReportRecord.new
+      for row in @rows
+        if prev_patient != row.code
+          _1st_round = true
+          if rows_count != 0
+            @records << r
+          end
+          r = ReportRecord.new
+          prev_patient = row.code
+        else
+          _1st_round = false
+        end
+        
+        if _1st_round
+          r.code = row.code
+          r.firstname = row.firstname
+        else 
+          r.day = row.day
+        end
+        rows_count = rows_count + 1
       end
+      @records << r
+      
+      # Write the records
+      respond_to do |format|
+        format.csv { send_data @records.to_csv }
+        format.xls
+      end
+
     else
       # TODO: Develop multi researches support
       # Develop view and disable option in menu
