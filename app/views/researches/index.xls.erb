@@ -7,15 +7,50 @@
   <Worksheet ss:Name="Sheet1">
     <Table>
       <Row>
-        <Cell><Data ss:Type="String">Codigo</Data></Cell>
-        <Cell><Data ss:Type="String">Persona</Data></Cell>
-        <Cell><Data ss:Type="String">Fecha</Data></Cell>
+        <Cell><Data ss:Type="String">Codigo IIRSME</Data></Cell>
+        <Cell><Data ss:Type="String">Codigo EEVA</Data></Cell>
+        <Cell><Data ss:Type="String">Fecha de Nacimiento</Data></Cell>
+        <Cell><Data ss:Type="String">Edad</Data></Cell>
+        <Cell><Data ss:Type="String">Fecha de DX</Data></Cell>
+        <Cell><Data ss:Type="String">Inicio Enfermedad</Data></Cell>
+        <Cell><Data ss:Type="String">Dia</Data></Cell>
+        <Cell><Data ss:Type="String">Dia</Data></Cell>
+        <Cell><Data ss:Type="String">TAS</Data></Cell>
+        <Cell><Data ss:Type="String">TAS</Data></Cell>
+        <Cell><Data ss:Type="String">TAD</Data></Cell>
+        <Cell><Data ss:Type="String">TAD</Data></Cell>
+        <Cell><Data ss:Type="String">TAM</Data></Cell>
+        <Cell><Data ss:Type="String">TAM</Data></Cell>
+        <Cell><Data ss:Type="String">Frecuencia Respiratoria</Data></Cell>
+        <Cell><Data ss:Type="String">Frecuencia Respiratoria</Data></Cell>
+        <Cell><Data ss:Type="String">Frecuencia Cardiaca</Data></Cell>
+        <Cell><Data ss:Type="String">Frecuencia Cardiaca</Data></Cell>
+        <Cell><Data ss:Type="String">Temperatura</Data></Cell>
+        <Cell><Data ss:Type="String">Temperatura</Data></Cell>
       </Row>
     <% @records.each do |record| %>
       <Row>
-        <Cell><Data ss:Type="String"><%= record.code %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= record.firstname %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= record.day %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.code_iirsme %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.code_eeva %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.birthdate %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.age %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.diagnosisdate %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.disease_startdate %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.day1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.day2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.tas1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.tas2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.tad1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.tad2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.tam1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.tam2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.freq_resp1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.freq_resp2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.freq_card1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.freq_card2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.temp1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.temp2 %></Data></Cell>        
+        
       </Row>
     <% end %>
     </Table>
