@@ -12,26 +12,28 @@ class ResearchesController < ApplicationController
         appointments.day,
         evaluations.exp_fisica_tas AS tas, evaluations.exp_fisica_tad AS tad, evaluations.exp_fisica_tam AS tam,
         evaluations.var_fresp AS freq_resp, evaluations.var_fc AS freq_card, evaluations.var_temp AS temp,
-        evaluations.var_talla, evaluations.var_peso, evaluations.var_imc,
-        evaluations.nut_grasa_total, evaluations.var_cc, evaluations.nut_ccad,
-        evaluations.dinam_der4a, evaluations.dinam_izq4a,
-        evaluations.reuma_eva_enfermedad, evaluations.reuma_eva_ddos, evaluations.reuma_eva_medico,
-        evaluations.reuma_cdai, evaluations.reuma_sdai, evaluations.var_haq, evaluations.reuma_nad,
-        evaluations.reuma_nat, evaluations.var_vsg, evaluations.var_pcr, evaluations.var_das28,
-        evaluations.var_das28pcr, evaluations.var_tg, evaluations.var_ldl, evaluations.var_hdl,
-        evaluations.var_vldl, evaluations.qui_indice_aterosclerosis, evaluations.var_ct, evaluations.var_glu,
-        evaluations.qui_apoa1, evaluations.qui_apob, evaluations.qui_tgoast, evaluations.qui_albumina,
-        evaluations.var_fr, evaluations.lab_reuma_c3, evaluations.lab_reuma_c4, evaluations.var_il1, 
-        evaluations.var_il6, evaluations.lab_reuma_antipad3, evaluations.lab_reuma_antipad4,
-        evaluations.var_acpa, evaluations.var_tnfa, evaluations.lab_mol_dna, evaluations.lab_mol_rna,
-        evaluations.lab_mol_mirna, 
-        evaluations.car_artlab_qimt_izq, evaluations.car_artlab_qimt_der, evaluations.car_artlab_qimt_prom,
-        evaluations.car_artlab_diametro1_izq, evaluations.car_artlab_diametro1_der,
-        evaluations.car_artlab_qimtmax_izq, evaluations.car_artlab_qimtmax_der, 
-        evaluations.car_artlab_distension_der, evaluations.car_artlab_diametro2_der, evaluations.car_artlab_distensibilidad_der,
-        evaluations.car_artlab_psisbraquial_der, evaluations.car_artlab_pdiasbraquial_der, evaluations.car_artlab_psislocal_der,
-        evaluations.car_artlab_pdiaslocal_der, evaluations.car_artlab_vop_der, evaluations.car_artlab_dc_der,
-        evaluations.car_artlab_cc_der, evaluations.car_artlab_alfa_der, evaluations.car_artlab_beta_der,
+        evaluations.var_talla AS talla, evaluations.var_peso AS peso, evaluations.var_imc AS imc,
+        evaluations.nut_grasa_total AS grasa, evaluations.var_cc AS ccin, evaluations.nut_ccad AS ccad,
+        evaluations.dinam_der4a AS prom_der, evaluations.dinam_izq4a AS prom_izq,
+        evaluations.reuma_eva_enfermedad AS eva_enf, evaluations.reuma_eva_ddos AS eva_dolor, evaluations.reuma_eva_medico AS eva_medico,
+        evaluations.reuma_cdai AS cdai, evaluations.reuma_sdai AS sdai, evaluations.var_haq AS haq, evaluations.reuma_nad AS nad,
+        evaluations.reuma_nat AS nat, evaluations.var_vsg AS vsg, evaluations.var_pcr AS pcr, evaluations.var_das28 AS das28,
+        evaluations.var_das28pcr AS das28pcr, evaluations.var_tg AS tg, evaluations.var_ldl AS ldl, evaluations.var_hdl AS hdl,
+        evaluations.var_vldl AS vldl, evaluations.qui_indice_aterosclerosis AS indice_ar, evaluations.var_ct AS ct, evaluations.var_glu AS glu,
+        evaluations.qui_apoa1 AS apoa1, evaluations.qui_apob AS apob, evaluations.qui_tgoast AS tgoast, evaluations.qui_albumina AS albumina,
+        evaluations.var_fr AS fr, evaluations.lab_reuma_c3 AS c3, evaluations.lab_reuma_c4 AS c4, evaluations.var_il1 AS il1,
+        evaluations.var_il6 AS il6, evaluations.lab_reuma_antipad3 AS antipad3, evaluations.lab_reuma_antipad4 AS antipad4,
+        evaluations.var_acpa AS acpa, evaluations.var_tnfa AS tnfa, evaluations.lab_mol_dna AS dna, evaluations.lab_mol_rna AS rna,
+        evaluations.lab_mol_mirna AS mirna,
+        evaluations.car_artlab_qimt_izq AS qimt_izq, evaluations.car_artlab_qimt_der AS qimt_der, evaluations.car_artlab_qimt_prom AS qimt_prom,
+        evaluations.car_artlab_diametro1_izq AS diam_izq, evaluations.car_artlab_diametro1_der AS diam_der,
+        evaluations.car_artlab_qimtmax_izq AS qimtmax_izq, evaluations.car_artlab_qimtmax_der, 
+        
+        evaluations.car_artlab_distension_der AS distension, evaluations.car_artlab_diametro2_der AS diametro, evaluations.car_artlab_distensibilidad_der AS distensibilidad,
+        evaluations.car_artlab_psisbraquial_der AS psisbraq, evaluations.car_artlab_pdiasbraquial_der AS pdiasbraq, evaluations.car_artlab_psislocal_der AS psislocal,
+        evaluations.car_artlab_pdiaslocal_der AS pdiaslocal, evaluations.car_artlab_vop_der AS vo, evaluations.car_artlab_dc_der AS dc,
+        evaluations.car_artlab_cc_der AS cc, evaluations.car_artlab_alfa_der AS alfa, evaluations.car_artlab_beta_der AS beta,
+        
         evaluations.car_artlab_icp_der, evaluations.car_artlab_ed_der, evaluations.car_artlab_p_der,
         evaluations.car_artlab_ap_der, evaluations.car_artlab_aix_der, evaluations.car_artlab_presenciaplaca_izq, evaluations.car_artlab_presenciaplaca_der,
         evaluations.car_pwv4a, evaluations.car_tt4a, evaluations.car_popscore4a,
@@ -77,14 +79,14 @@ class ResearchesController < ApplicationController
           r.freq_resp1 = row.freq_resp
           r.freq_card1 = row.freq_card
           r.temp1 = row.temp
+          r.talla1 = row.talla
+          r.peso1 = row.peso
+          r.imc1 = row.imc
+          r.grasa1 = row.grasa
+          r.ccin1 = row.ccin
+          r.ccad1 = row.ccad
         else 
-          r.day2 = row.day
-          r.tas2 = row.tas
-          r.tad2 = row.tad
-          r.tam2 = row.tam
-          r.freq_resp2 = row.freq_resp
-          r.freq_card2 = row.freq_card
-          r.temp2 = row.temp
+
         end
         rows_count = rows_count + 1
       end

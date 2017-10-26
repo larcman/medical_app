@@ -27,6 +27,19 @@
         <Cell><Data ss:Type="String">Frecuencia Cardiaca</Data></Cell>
         <Cell><Data ss:Type="String">Temperatura</Data></Cell>
         <Cell><Data ss:Type="String">Temperatura</Data></Cell>
+        <Cell><Data ss:Type="String">Talla</Data></Cell>
+        <Cell><Data ss:Type="String">Talla</Data></Cell>
+        <Cell><Data ss:Type="String">Peso</Data></Cell>
+        <Cell><Data ss:Type="String">Peso</Data></Cell>
+        <Cell><Data ss:Type="String">IMC</Data></Cell>
+        <Cell><Data ss:Type="String">IMC</Data></Cell>
+        <Cell><Data ss:Type="String">% Grasa Total</Data></Cell>
+        <Cell><Data ss:Type="String">% Grasa Total</Data></Cell>
+        <Cell><Data ss:Type="String">Circunferencia Cintura</Data></Cell>
+        <Cell><Data ss:Type="String">Circunferencia Cintura</Data></Cell>
+        <Cell><Data ss:Type="String">Circunferencia Cadera</Data></Cell>
+        <Cell><Data ss:Type="String">Circunferencia Cadera</Data></Cell>
+        
       </Row>
     <% @records.each do |record| %>
       <Row>
@@ -49,7 +62,19 @@
         <Cell><Data ss:Type="String"><%= record.freq_card1 %></Data></Cell>
         <Cell><Data ss:Type="String"><%= record.freq_card2 %></Data></Cell>
         <Cell><Data ss:Type="String"><%= record.temp1 %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= record.temp2 %></Data></Cell>        
+        <Cell><Data ss:Type="String"><%= record.temp2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.talla1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.talla2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.peso1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.peso2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.imc1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.imc2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.grasa1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.grasa2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.ccin1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.ccin2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.ccad1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= record.ccad2 %></Data></Cell>
         
       </Row>
     <% end %>
