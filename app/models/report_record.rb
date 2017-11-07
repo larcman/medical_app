@@ -144,7 +144,60 @@ class ReportRecord
   attr_accessor :alfa2
   attr_accessor :beta1
   attr_accessor :beta2
-  
+  attr_accessor :icp1
+  attr_accessor :icp2
+  attr_accessor :ed1
+  attr_accessor :ed2
+  attr_accessor :p1
+  attr_accessor :p2
+  attr_accessor :ap1
+  attr_accessor :ap2
+  attr_accessor :aix1
+  attr_accessor :aix2
+  attr_accessor :placa_izq1
+  attr_accessor :placa_izq2
+  attr_accessor :placa_der1
+  attr_accessor :placa_der2
+  attr_accessor :pwv1
+  attr_accessor :pwv2
+  attr_accessor :ttp1
+  attr_accessor :ttp2
+  attr_accessor :pop1
+  attr_accessor :pop2
+  attr_accessor :vopcf1
+  attr_accessor :vopcf2
+  attr_accessor :aixx1
+  attr_accessor :aixx2
+  attr_accessor :presion_cent1
+  attr_accessor :presion_cent2
+  attr_accessor :ccp1
+  attr_accessor :ccp2
+  attr_accessor :app1
+  attr_accessor :app2
+  attr_accessor :ppas1
+  attr_accessor :ppas2
+  attr_accessor :ppad1
+  attr_accessor :ppad2
+  attr_accessor :percentil1
+  attr_accessor :percentil2
+  attr_accessor :carfem1
+  attr_accessor :carfem2
+  attr_accessor :caris1
+  attr_accessor :caris2
+  attr_accessor :isfem1
+  attr_accessor :isfem2
+  attr_accessor :sevr1
+  attr_accessor :sevr2
+  attr_accessor :cavii1
+  attr_accessor :cavii2
+  attr_accessor :cavid1
+  attr_accessor :cavid2
+  attr_accessor :cavi_prom1
+  attr_accessor :cavi_prom2
+  attr_accessor :abii1
+  attr_accessor :abii2
+  attr_accessor :abid1
+  attr_accessor :abid2
 
   def initialize
   end
